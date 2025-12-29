@@ -932,4 +932,90 @@
                                 <strong style="color: #4dccbd;">${comment.name}</strong>
                                 <span style="color: #aaa; font-size: 0.9em;">${date}</span>
                             </div>
-                            <p style="
+                            <p style="margin-bottom: 10px;">${comment.text}</p>
+                            <textarea id="reply_${comment.id}" placeholder="پاسخ خود را بنویسید..." 
+                                      style="width: 100%; padding: 10px; background: rgba(255,255,255,0.1); border: 1px solid #4dccbd; color: white; border-radius: 5px; margin-bottom: 10px;" rows="3">${comment.reply || ''}</textarea>
+                            <div>
+                                <button onclick="adminReply(${comment.id})" 
+                                        style="background: #4dccbd; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; margin-right: 10px;">
+                                    ذخیره پاسخ
+                                </button>
+                                <button onclick="adminDelete(${index})" 
+                                        style="background: #ff6b6b; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">
+                                    حذف نظر
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                adminHTML += `</div></div>`;
+                document.body.insertAdjacentHTML('beforeend', adminHTML);
+            } else {
+                alert('رمز اشتباه است!');
+            }
+        }
+        
+        // پاسخ دادن به کامنت
+        function adminReply(commentId) {
+            const replyText = document.getElementById(`reply_${commentId}`).value.trim();
+            const comment = comments.find(c => c.id === commentId);
+            if (comment) {
+                comment.reply = replyText;
+                saveComments();
+                displayComments();
+                alert('پاسخ ذخیره شد!');
+            }
+        }
+        
+        // حذف کامنت
+        function adminDelete(index) {
+            if (confirm('آیا مطمئن هستید که می‌خواهید این نظر را حذف کنید؟')) {
+                comments.splice(index, 1);
+                saveComments();
+                displayComments();
+                alert('نظر حذف شد!');
+                // بستن و بازکردن مجدد پنل
+                document.querySelector('div[style*="background: rgba(0,0,0,0.95)"]')?.remove();
+                showAdminPanel();
+            }
+        }
+        
+        // ==================== مقداردهی اولیه ====================
+        // بارگذاری کامنت‌ها
+        loadComments();
+        
+        // وضعیت آنلاین
+        function updateOnlineStatus() {
+            const now = new Date();
+            const hours = now.getHours();
+            const status = document.querySelector('.online-status');
+            
+            if (hours >= 16 && hours <= 23) {
+                status.style.background = '#00ff7b';
+                status.title = 'آنلاین - در حال گیمینگ';
+            } else if (hours >= 10 && hours < 16) {
+                status.style.background = '#ffcc00';
+                status.title = 'آنلاین - در حال تدوین';
+            } else {
+                status.style.background = '#ff4757';
+                status.title = 'آفلاین - به زودی برمی‌گردم';
+            }
+        }
+        
+        updateOnlineStatus();
+        setInterval(updateOnlineStatus, 60000);
+        
+        // افکت‌های تعاملی
+        document.querySelectorAll('.game-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
