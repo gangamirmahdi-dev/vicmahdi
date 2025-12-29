@@ -1,142 +1,594 @@
-<<!DOCTYPE html>
-<html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VICTORIOUSMAHDI | سلطان گیمینگ</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
-body{background:#0a0a16;color:#fff;direction:rtl;min-height:100vh;overflow-x:hidden}
-.background{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;opacity:0.3}
-.pixel{position:absolute;background:#00ffea;width:2px;height:2px;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:0.2}50%{opacity:0.8}}
-.container{max-width:1000px;margin:0 auto;padding:20px;position:relative}
-.header{text-align:center;padding:30px 0;border-bottom:3px solid #ff0055;margin-bottom:40px}
-.profile-img{width:150px;height:150px;border-radius:50%;border:4px solid #00ffea;box-shadow:0 0 30px #00ffea;margin-bottom:20px}
-h1{font-size:3rem;background:linear-gradient(90deg,#ff0055,#00ffea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 20px rgba(0,255,234,0.5);margin-bottom:10px}
-.tagline{color:#aaa;font-size:1.2rem;margin-bottom:30px}
-.gaming-badges{display:flex;justify-content:center;gap:30px;margin:40px 0}
-.badge{background:rgba(255,255,255,0.05);border:2px solid;border-radius:15px;padding:20px;width:250px;text-align:center;transition:all 0.3s}
-.badge:hover{transform:translateY(-10px);box-shadow:0 10px 30px rgba(0,0,0,0.5)}
-.badge.minecraft{border-color:#6bc46d}
-.badge.freefire{border-color:#ff9a3c}
-.badge.bedwars{border-color:#ff6b6b}
-.badge i{font-size:3rem;margin-bottom:15px}
-.channels{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin:50px 0}
-.channel{background:linear-gradient(135deg,rgba(26,58,106,0.9),rgba(42,90,167,0.9));padding:25px;border-radius:20px;border:2px solid #5c6bc0;position:relative;overflow:hidden}
-.channel:before{content:'';position:absolute;top:0;left:0;width:100%;height:5px;background:linear-gradient(90deg,#ff0055,#00ffea)}
-.channel h3{font-size:1.8rem;margin-bottom:15px;color:#88ccff}
-.channel p{color:#cce7ff;line-height:1.6}
-.channel-btn{display:inline-block;background:linear-gradient(90deg,#ff0055,#00ffea);color:white;padding:12px 30px;border-radius:50px;text-decoration:none;font-weight:bold;margin-top:20px;transition:all 0.3s}
-.channel-btn:hover{transform:scale(1.05);box-shadow:0 5px 20px rgba(255,0,85,0.5)}
-.donation{background:rgba(31,17,92,0.9);padding:30px;border-radius:20px;margin:50px 0;border:2px solid #8b5cf6;position:relative}
-.donation:before{content:'⚡';position:absolute;top:-20px;right:20px;font-size:2rem;color:#ffd700}
-.donation h3{font-size:2rem;color:#bb86fc;margin-bottom:20px}
-.amounts{display:flex;justify-content:center;gap:15px;margin:25px 0}
-.amount{background:rgba(124,77,255,0.2);border:2px solid #7c4dff;color:#e1bee7;padding:15px;border-radius:10px;cursor:pointer;transition:all 0.3s}
-.amount:hover{background:#7c4dff;color:white}
-.donate-btn{background:linear-gradient(135deg,#00e676,#00c853);color:white;padding:15px 40px;border-radius:50px;border:none;font-size:1.2rem;font-weight:bold;cursor:pointer;transition:all 0.3s;display:block;margin:30px auto}
-.donate-btn:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,230,118,0.5)}
-.footer{text-align:center;padding:30px 0;color:#88aadd;border-top:1px solid #2a4a7a;margin-top:50px}
-@media (max-width:768px){
-    .channels{grid-template-columns:1fr}
-    .gaming-badges{flex-direction:column;align-items:center}
-    h1{font-size:2.2rem}
-    .amounts{flex-wrap:wrap}
-}
-</style>
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 🔥 SEO حیاتی برای گوگل -->
+    <title>Victoriousmahdi | کانال گیمینگ ماین‌کرافت، فری فایر، بدوارز</title>
+    <meta name="description" content="کانال رسمی Victoriousmahdi | چالش‌های ماین‌کرافت، گیم‌پلی فری فایر، سرورهای بدوارز | محتوای گیمینگ فارسی">
+    <meta name="keywords" content="ماین‌کرافت, فری فایر, بدوارز, گیمینگ فارسی, Victoriousmahdi, آپارات گیمینگ, چالش بازی">
+    <meta name="author" content="Victoriousmahdi">
+    
+    <!-- ✅ گوگل سایت وریفیکیشن -->
+    <meta name="google-site-verification" content="8xiOyPt9_Y-aUS8jS3GMKwCaTvUrB5ArGILsinTGBsA" />
+    
+    <!-- 🌐 Open Graph برای اشتراک‌گذاری -->
+    <meta property="og:title" content="Victoriousmahdi | سلطان گیمینگ">
+    <meta property="og:description" content="کانال گیمینگ با محتوای حرفه‌ای ماین‌کرافت، فری فایر و بدوارز">
+    <meta property="og:image" content="vic.jpg">
+    <meta property="og:url" content="https://ganganirmahdi-dev.github.io/vicmahdi/">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* 🎨 استایل اصلی */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        body {
+            background: #0f0f1f;
+            color: #ffffff;
+            direction: rtl;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(41, 196, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 65, 108, 0.1) 0%, transparent 50%);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 🏆 هدر و پروفایل */
+        .header {
+            text-align: center;
+            padding: 40px 0 30px;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            right: 20%;
+            height: 3px;
+            background: linear-gradient(90deg, #ff2a6d, #00ffea);
+            border-radius: 3px;
+        }
+        
+        .profile-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        
+        .profile-frame {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            padding: 8px;
+            background: linear-gradient(45deg, #ff2a6d, #00ffea, #05ffa1);
+            animation: rotateGradient 3s linear infinite;
+            position: relative;
+        }
+        
+        @keyframes rotateGradient {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0f0f1f;
+            display: block;
+        }
+        
+        .online-status {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            width: 20px;
+            height: 20px;
+            background: #00ff7b;
+            border-radius: 50%;
+            border: 3px solid #0f0f1f;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 123, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 123, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 123, 0); }
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            background: linear-gradient(90deg, #ff2a6d, #00ffea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+        
+        .tagline {
+            color: #88ccff;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            color: #aaa;
+        }
+        
+        /* 🎮 بخش بازی‌ها */
+        .games-section {
+            margin: 50px 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff2a6d, transparent);
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .game-card {
+            background: rgba(30, 35, 60, 0.7);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff2a6d, #00ffea);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff2a6d;
+            box-shadow: 0 15px 30px rgba(255, 42, 109, 0.2);
+        }
+        
+        .game-card:hover::before {
+            opacity: 1;
+        }
+        
+        .game-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .minecraft .game-icon { color: #6bc46d; }
+        .freefire .game-icon { color: #ff9a3c; }
+        .bedwars .game-icon { color: #ff6b6b; }
+        
+        .game-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        
+        .game-card p {
+            color: #b0b7d0;
+            line-height: 1.6;
+        }
+        
+        /* 📱 بخش کانال‌ها */
+        .channels-section {
+            margin: 60px 0;
+        }
+        
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .channel-card {
+            background: linear-gradient(145deg, rgba(26, 30, 50, 0.9), rgba(40, 45, 70, 0.9));
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(92, 107, 192, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .channel-card:hover {
+            border-color: #5c6bc0;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(92, 107, 192, 0.3);
+        }
+        
+        .channel-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .channel-icon {
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .aparat .channel-icon {
+            background: rgba(255, 46, 99, 0.2);
+            color: #ff2e63;
+        }
+        
+        .rubika .channel-icon {
+            background: rgba(139, 92, 246, 0.2);
+            color: #8b5cf6;
+        }
+        
+        .channel-header h3 {
+            font-size: 1.8rem;
+            color: #ffffff;
+        }
+        
+        .channel-card p {
+            color: #c5cae9;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        
+        .channel-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #00adb5, #008e94);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .channel-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 173, 181, 0.4);
+        }
+        
+        /* 💰 بخش حمایت */
+        .donation-section {
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.9), rgba(49, 27, 146, 0.9));
+            border-radius: 25px;
+            padding: 40px;
+            margin: 60px 0;
+            border: 1px solid #5c6bc0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .donation-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: float 6s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .donation-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .donation-title {
+            font-size: 2.2rem;
+            color: #bb86fc;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .donation-desc {
+            color: #c5cae9;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+        }
+        
+        .amount-selector {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .amount-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #7c4dff;
+            color: #e1bee7;
+            padding: 15px 25px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .amount-btn:hover, .amount-btn.active {
+            background: #7c4dff;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .donate-action {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .donate-main-btn {
+            background: linear-gradient(135deg, #00e676, #00c853);
+            color: white;
+            border: none;
+            padding: 16px 50px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .donate-main-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 230, 118, 0.4);
+        }
+        
+        /* 🏁 فوتر */
+        .footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            color: #88aadd;
+            border-top: 1px solid #2a4a7a;
+            margin-top: 60px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .footer a {
+            color: #88ccff;
+            text-decoration: none;
+        }
+        
+        /* 📱 رسپانسیو */
+        @media (max-width: 768px) {
+            .container { padding: 15px; }
+            h1 { font-size: 2.2rem; }
+            .games-grid, .channels-grid { grid-template-columns: 1fr; }
+            .amount-selector { gap: 10px; }
+            .amount-btn { padding: 12px 20px; }
+            .stats { flex-direction: column; gap: 10px; }
+            .profile-frame { width: 150px; height: 150px; }
+        }
+    </style>
 </head>
 <body>
-<div class="background" id="pixels"></div>
-<div class="container">
-    <div class="header">
-        <img src="vic.jpg" alt="Victoriousmahdi" class="profile-img">
-        <h1>VICTORIOUSMAHDI</h1>
-        <p class="tagline">🚀 سلطان گیمینگ | ماین‌کرافت • فری فایر • بدوارز</p>
+    <div class="container">
+        <!-- 🏆 هدر -->
+        <header class="header">
+            <div class="profile-container">
+                <div class="profile-frame">
+                    <img src="vic.jpg" alt="Victoriousmahdi" class="profile-img">
+                </div>
+                <div class="online-status"></div>
+            </div>
+            
+            <h1>VICTORIOUSMAHDI</h1>
+            <p class="tagline">سلطان گیمینگ | ماین‌کرافت • فری فایر • بدوارز</p>
+            
+            <div class="stats">
+                <span><i class="fas fa-video"></i> ۱۸۹ دنبال‌کننده</span>
+                <span><i class="fas fa-eye"></i> ۲۸۳+ بازدید</span>
+                <span><i class="fas fa-gamepad"></i> ۳ بازی فعال</span>
+            </div>
+        </header>
+
+        <!-- 🎮 بخش بازی‌ها -->
+        <section class="games-section">
+            <h2 class="section-title">حوزه‌های تخصصی گیمینگ</h2>
+            <div class="games-grid">
+                <div class="game-card minecraft">
+                    <div class="game-icon"><i class="fas fa-cube"></i></div>
+                    <h3>ماین‌کرافت</h3>
+                    <p>چالش‌های هیجان‌انگیز، بررسی سرورهای منتخب، مودها و نقشه‌های اختصاصی</p>
+                </div>
+                
+                <div class="game-card freefire">
+                    <div class="game-icon"><i class="fas fa-fire"></i></div>
+                    <h3>فری فایر</h3>
+                    <p>بتل رویال حرفه‌ای، گیم‌پلی تاکتیکی، آموزش استراتژی و همکاری تیمی</p>
+                </div>
+                
+                <div class="game-card bedwars">
+                    <div class="game-icon"><i class="fas fa-fist-raised"></i></div>
+                    <h3>بدوارز</h3>
+                    <p>مبارزات استراتژیک، بازی تیمی، تاکتیک‌های پیشرفته و رقابت‌های مهیج</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📱 بخش کانال‌ها -->
+        <section class="channels-section">
+            <h2 class="section-title">کانال‌های من</h2>
+            <div class="channels-grid">
+                <div class="channel-card aparat">
+                    <div class="channel-header">
+                        <div class="channel-icon"><i class="fas fa-video"></i></div>
+                        <h3>کانال آپارات</h3>
+                    </div>
+                    <p>تماشای ویدیوهای گیمینگ با کیفیت بالا، پارت‌های مختلف بازی‌ها، ترفندها، چالش‌های اختصاصی و محتوای روزانه</p>
+                    <a href="https://www.aparat.com/Victoriousmahdi" target="_blank" class="channel-btn">ورود به کانال آپارات</a>
+                </div>
+                
+                <div class="channel-card rubika">
+                    <div class="channel-header">
+                        <div class="channel-icon"><i class="fas fa-comment-dots"></i></div>
+                        <h3>کانال روبیکا</h3>
+                    </div>
+                    <p>تعامل مستقیم با مخاطبان، اطلاع‌رسانی فوری، اشتراک‌گذاری لینک سرورها، هماهنگی بازی‌های گروهی و پشتیبانی</p>
+                    <a href="https://web.rubika.ir/#c=c0CztlG03a997ee9f474089c7e1c352b" target="_blank" class="channel-btn">عضویت در کانال روبیکا</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 💰 بخش حمایت -->
+        <section class="donation-section">
+            <div class="donation-content">
+                <h2 class="donation-title"><i class="fas fa-crown"></i> حمایت از تولید محتوا</h2>
+                <p class="donation-desc">
+                    اگر از محتوای گیمینگ من لذت می‌برید و می‌خواهید از ادامه‌دار بودن چالش‌ها، سرورها و ویدیوها حمایت کنید، می‌توانید با هر مبلغی کمک کنید. هر حمایتی انگیزه‌بخش است!
+                </p>
+                
+                <div class="amount-selector">
+                    <button class="amount-btn" data-amount="10000">۱۰,۰۰۰ تومان</button>
+                    <button class="amount-btn active" data-amount="50000">۵۰,۰۰۰ تومان</button>
+                    <button class="amount-btn" data-amount="100000">۱۰۰,۰۰۰ تومان</button>
+                    <button class="amount-btn" data-amount="200000">۲۰۰,۰۰۰ تومان</button>
+                </div>
+                
+                <div class="donate-action">
+                    <button class="donate-main-btn" onclick="processDonation()">
+                        <i class="fas fa-donate"></i> حمایت مالی از طریق درگاه پرداخت
+                    </button>
+                </div>
+                
+                <p style="text-align: center; color: #ffd166; margin-top: 20px; font-size: 0.9rem;">
+                    <i class="fas fa-info-circle"></i> مبالغ دریافتی صرف ارتقای تجهیزات ضبط، خرید سرور و تولید محتوای باکیفیت می‌شود
+                </p>
+            </div>
+        </section>
+
+        <!-- 🏁 فوتر -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="https://www.aparat.com/Victoriousmahdi" target="_blank"><i class="fas fa-video"></i> آپارات</a>
+                <a href="https://web.rubika.ir/#c=c0CztlG03a997ee9f474089c7e1c352b" target="_blank"><i class="fas fa-comment-dots"></i> روبیکا</a>
+                <a href="#" onclick="alert('سایت رسمی: https://ganganirmahdi-dev.github.io/vicmahdi/')"><i class="fas fa-globe"></i> سایت</a>
+            </div>
+            <p>© 2024 Victoriousmahdi - کلیه حقوق محفوظ است</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; color: #666;">بهینه‌شده برای موتورهای جستجو</p>
+        </footer>
     </div>
 
-    <div class="gaming-badges">
-        <div class="badge minecraft">
-            <i class="fas fa-cube" style="color:#6bc46d"></i>
-            <h3>ماین‌کرافت</h3>
-            <p>چالش‌های افسانه‌ای + سرورهای خفن</p>
-        </div>
-        <div class="badge freefire">
-            <i class="fas fa-fire" style="color:#ff9a3c"></i>
-            <h3>فری فایر</h3>
-            <p>بتل رویال حرفه‌ای با تاکتیک‌های خاص</p>
-        </div>
-        <div class="badge bedwars">
-            <i class="fas fa-fist-raised" style="color:#ff6b6b"></i>
-            <h3>بدوارز</h3>
-            <p>مبارزات تیمی و استراتژیک</p>
-        </div>
-    </div>
-
-    <div class="channels">
-        <div class="channel">
-            <h3><i class="fas fa-video"></i> کانال آپارات</h3>
-            <p>تماشای ویدیوهای گیمینگ، پارت‌های مختلف بازی‌ها، ترفندها و چالش‌های خفن. هر روز محتوای جدید!</p>
-            <a href="https://www.aparat.com/Victoriousmahdi" target="_blank" class="channel-btn">ورود به آپارات</a>
-        </div>
-        <div class="channel">
-            <h3><i class="fas fa-comment-dots"></i> کانال روبیکا</h3>
-            <p>تعامل مستقیم، اطلاع‌رسانی سریع، لینک سرورها و هماهنگی برای گیم‌های گروهی. حتما جوین شو!</p>
-            <a href="https://web.rubika.ir/#c=c0CztlG03a997ee9f474089c7e1c352b" target="_blank" class="channel-btn">عضویت در روبیکا</a>
-        </div>
-    </div>
-
-    <div class="donation">
-        <h3><i class="fas fa-crown"></i> حمایت از پادشاه گیمینگ</h3>
-        <p>برای ادامه تولید محتوای با کیفیت و سرورهای خفن می‌تونی حمایت مالی داشته باشی. هر مقدار کمک بزرگیه! 👑</p>
-        <div class="amounts">
-            <div class="amount" onclick="selectAmount(10000)">۱۰,۰۰۰ تومان</div>
-            <div class="amount" onclick="selectAmount(50000)">۵۰,۰۰۰ تومان</div>
-            <div class="amount" onclick="selectAmount(100000)">۱۰۰,۰۰۰ تومان</div>
-            <div class="amount" onclick="selectAmount(200000)">۲۰۰,۰۰۰ تومان</div>
-        </div>
-        <input type="number" id="customAmount" placeholder="مبلغ دلخواه" style="width:200px;padding:10px;border-radius:10px;border:2px solid #8b5cf6;background:rgba(0,0,0,0.3);color:white;text-align:center;margin:15px">
-        <button class="donate-btn" onclick="donate()"><i class="fas fa-donate"></i> حمایت میکنم!</button>
-    </div>
-
-    <div class="footer">
-        <p>© 2024 VICTORIOUSMAHDI | تمامی حقوق محفوظ است</p>
-        <p>سایت رسمی: https://ganganirmahdi-dev.github.io/vicmahdi/</p>
-    </div>
-</div>
-
-<script>
-// ایجاد پیکسل‌های متحرک
-for(let i=0;i<100;i++){
-    let pixel=document.createElement('div');
-    pixel.className='pixel';
-    pixel.style.left=Math.random()*100+'%';
-    pixel.style.top=Math.random()*100+'%';
-    pixel.style.animationDelay=Math.random()*2+'s';
-    document.getElementById('pixels').appendChild(pixel);
-}
-
-// انتخاب مبلغ
-let selectedAmount=50000;
-function selectAmount(amount){
-    selectedAmount=amount;
-    document.getElementById('customAmount').value=amount;
-    document.querySelectorAll('.amount').forEach(a=>a.style.background='');
-    event.target.style.background='#7c4dff';
-}
-
-// درگاه پرداخت
-function donate(){
-    let amount=document.getElementById('customAmount').value||selectedAmount;
-    window.open(`https://victoriousmahdi.ir.page/?amount=${amount}`,'_blank');
-}
-
-// افکت‌های تعاملی
-document.querySelectorAll('.badge').forEach(badge=>{
-    badge.addEventListener('mouseenter',()=>{
-        badge.style.boxShadow=`0 15px 40px ${getComputedStyle(badge).borderColor}`;
-    });
-    badge.addEventListener('mouseleave',()=>{
-        badge.style.boxShadow='none';
-    });
-});
-</script>
-</body></html>
+    <script>
+        // 🎮 سیستم انتخاب مبلغ
+        const amountButtons = document.querySelectorAll('.amount-btn');
+        let selectedAmount = 50000;
+        
+        amountButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // حذف کلاس active از همه
+                amountButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // اضافه کردن به دکمه انتخاب شده
+                this.classList.add('active');
+                
+                // ذخیره مبلغ انتخاب شده
+                selectedAmount = this.getAttribute('data-amount');
+            });
+        });
+        
+        // 💰 پردازش حمایت مالی
+        function processDonation() {
+            window.open(`https://victoriousmahdi.ir.page/?amount=${selectedAmount}`, '_blank');
+        }
+        
+        // ✨ افکت‌های تعاملی
+        document.querySelectorAll('.game-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // 📱 وضعیت آنلاین
+        function updateOnlineStatus() {
+            const now = new Date();
+            const hours = now.getHours();
+            const status = document.querySelector('.online-status');
+            
+            if (hours >= 16 && hours <= 23) {
+                status.style.background = '#00ff7b';
+                status.title = 'آنلاین - در حال گیمینگ';
+            } else if (hours >= 10 && hours < 16) {
+                status.style.background = '#ffcc00';
+                status.title = 'آنلاین - در حال تدوین';
+            } else {
+                status.style.background = '#ff4757';
+                status.title = 'آفلاین - به زودی برمی‌گردم';
+            }
+        }
+        
+        updateOnlineStatus();
+        setInterval(updateOnlineStatus, 60000); // هر دقیقه آپدیت کن
+    </script>
+</body>
+</html>
