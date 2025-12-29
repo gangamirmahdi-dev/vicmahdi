@@ -4,30 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 🔥 SEO حیاتی برای گوگل -->
+    <!-- 🔥 SEO -->
     <title>Victoriousmahdi | کانال گیمینگ ماین‌کرافت، فری فایر، بدوارز</title>
     <meta name="description" content="کانال رسمی Victoriousmahdi | چالش‌های ماین‌کرافت، گیم‌پلی فری فایر، سرورهای بدوارز | محتوای گیمینگ فارسی">
-    <meta name="keywords" content="ماین‌کرافت, فری فایر, بدوارز, گیمینگ فارسی, Victoriousmahdi, آپارات گیمینگ, چالش بازی">
+    <meta name="keywords" content="ماین‌کرافت, فری فایر, بدوارز, گیمینگ فارسی, Victoriousmahdi, آپارات گیمینگ">
     <meta name="author" content="Victoriousmahdi">
-    
-    <!-- ✅ گوگل سایت وریفیکیشن -->
     <meta name="google-site-verification" content="8xiOyPt9_Y-aUS8jS3GMKwCaTvUrB5ArGILsinTGBsA" />
-    
-    <!-- 🌐 Open Graph برای اشتراک‌گذاری -->
-    <meta property="og:title" content="Victoriousmahdi | سلطان گیمینگ">
-    <meta property="og:description" content="کانال گیمینگ با محتوای حرفه‌ای ماین‌کرافت، فری فایر و بدوارز">
-    <meta property="og:image" content="vic.jpg">
-    <meta property="og:url" content="https://ganganirmahdi-dev.github.io/vicmahdi/">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* 🎨 استایل اصلی */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        :root {
+            --primary: #ff2a6d;
+            --secondary: #00ffea;
+            --accent: #05ffa1;
+            --dark: #0f0f1f;
+            --card-bg: rgba(30, 35, 60, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
         
         body {
-            background: #0f0f1f;
-            color: #ffffff;
+            background: var(--dark);
+            color: #fff;
             direction: rtl;
             min-height: 100vh;
             background-image: 
@@ -36,12 +40,12 @@
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
         }
         
-        /* 🏆 هدر و پروفایل */
+        /* 🏆 هدر */
         .header {
             text-align: center;
             padding: 40px 0 30px;
@@ -55,7 +59,7 @@
             left: 20%;
             right: 20%;
             height: 3px;
-            background: linear-gradient(90deg, #ff2a6d, #00ffea);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             border-radius: 3px;
         }
         
@@ -70,14 +74,15 @@
             height: 180px;
             border-radius: 50%;
             padding: 8px;
-            background: linear-gradient(45deg, #ff2a6d, #00ffea, #05ffa1);
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
             animation: rotateGradient 3s linear infinite;
-            position: relative;
+            background-size: 400% 400%;
         }
         
         @keyframes rotateGradient {
             0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
         .profile-img {
@@ -85,7 +90,7 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #0f0f1f;
+            border: 4px solid var(--dark);
             display: block;
         }
         
@@ -97,7 +102,7 @@
             height: 20px;
             background: #00ff7b;
             border-radius: 50%;
-            border: 3px solid #0f0f1f;
+            border: 3px solid var(--dark);
             animation: pulse 2s infinite;
         }
         
@@ -109,7 +114,7 @@
         
         h1 {
             font-size: 3.2rem;
-            background: linear-gradient(90deg, #ff2a6d, #00ffea);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
@@ -153,7 +158,7 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(90deg, transparent, #ff2a6d, transparent);
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
         }
         
         .games-grid {
@@ -164,7 +169,7 @@
         }
         
         .game-card {
-            background: rgba(30, 35, 60, 0.7);
+            background: var(--card-bg);
             border-radius: 20px;
             padding: 25px;
             text-align: center;
@@ -181,14 +186,14 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #ff2a6d, #00ffea);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             opacity: 0;
             transition: opacity 0.3s;
         }
         
         .game-card:hover {
             transform: translateY(-10px);
-            border-color: #ff2a6d;
+            border-color: var(--primary);
             box-shadow: 0 15px 30px rgba(255, 42, 109, 0.2);
         }
         
@@ -205,17 +210,6 @@
         .minecraft .game-icon { color: #6bc46d; }
         .freefire .game-icon { color: #ff9a3c; }
         .bedwars .game-icon { color: #ff6b6b; }
-        
-        .game-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #ffffff;
-        }
-        
-        .game-card p {
-            color: #b0b7d0;
-            line-height: 1.6;
-        }
         
         /* 📱 بخش کانال‌ها */
         .channels-section {
@@ -297,7 +291,7 @@
             box-shadow: 0 5px 15px rgba(0, 173, 181, 0.4);
         }
         
-        /* 💰 بخش حمایت */
+        /* 💰 بخش دونیت با مبلغ دلخواه */
         .donation-section {
             background: linear-gradient(135deg, rgba(26, 35, 126, 0.9), rgba(49, 27, 146, 0.9));
             border-radius: 25px;
@@ -349,24 +343,46 @@
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-            margin: 30px 0;
+            margin: 20px 0;
         }
         
         .amount-btn {
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid #7c4dff;
             color: #e1bee7;
-            padding: 15px 25px;
-            border-radius: 12px;
+            padding: 12px 20px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s;
             font-weight: bold;
+            min-width: 100px;
         }
         
         .amount-btn:hover, .amount-btn.active {
             background: #7c4dff;
             color: white;
             transform: translateY(-3px);
+        }
+        
+        .custom-amount {
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .custom-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--secondary);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            width: 250px;
+            text-align: center;
+            margin: 0 10px;
+        }
+        
+        .custom-input::placeholder {
+            color: #9fa8da;
         }
         
         .donate-action {
@@ -392,6 +408,143 @@
         .donate-main-btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 230, 118, 0.4);
+        }
+        
+        /* 💬 بخش کامنت‌ها */
+        .comments-section {
+            background: rgba(20, 25, 45, 0.8);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 60px 0;
+            border: 1px solid #3a506b;
+        }
+        
+        .comment-form {
+            background: rgba(40, 55, 90, 0.6);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #88ccff;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #4dccbd;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        textarea.form-input {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #4dccbd, #00adb5);
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(77, 204, 189, 0.4);
+        }
+        
+        .comments-list {
+            margin-top: 30px;
+        }
+        
+        .comment {
+            background: rgba(50, 65, 100, 0.6);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-right: 4px solid #4dccbd;
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .comment-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .author-name {
+            color: #4dccbd;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .comment-date {
+            color: #88aadd;
+            font-size: 0.9rem;
+        }
+        
+        .comment-content {
+            color: #e6f1ff;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        
+        .admin-reply {
+            background: rgba(77, 204, 189, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-right: 3px solid #ffd166;
+        }
+        
+        .reply-header {
+            color: #ffd166;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .no-comments {
+            text-align: center;
+            color: #88aadd;
+            padding: 30px;
+            font-style: italic;
         }
         
         /* 🏁 فوتر */
@@ -421,9 +574,11 @@
             h1 { font-size: 2.2rem; }
             .games-grid, .channels-grid { grid-template-columns: 1fr; }
             .amount-selector { gap: 10px; }
-            .amount-btn { padding: 12px 20px; }
+            .amount-btn { padding: 10px 15px; min-width: 80px; }
             .stats { flex-direction: column; gap: 10px; }
             .profile-frame { width: 150px; height: 150px; }
+            .custom-input { width: 200px; }
+            .footer-links { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
@@ -433,17 +588,17 @@
         <header class="header">
             <div class="profile-container">
                 <div class="profile-frame">
-                    <img src="vic.jpg" alt="Victoriousmahdi" class="profile-img">
+                    <img src="vic.jpg" alt="Victoriousmahdi" class="profile-img" onerror="this.src='https://via.placeholder.com/180x180/1e293b/ffffff?text=V'">
                 </div>
-                <div class="online-status"></div>
+                <div class="online-status" title="آنلاین"></div>
             </div>
             
             <h1>VICTORIOUSMAHDI</h1>
             <p class="tagline">سلطان گیمینگ | ماین‌کرافت • فری فایر • بدوارز</p>
             
             <div class="stats">
-                <span><i class="fas fa-video"></i> ۱۸۹ دنبال‌کننده</span>
-                <span><i class="fas fa-eye"></i> ۲۸۳+ بازدید</span>
+                <span><i class="fas fa-video"></i> <span id="followerCount">189</span> دنبال‌کننده</span>
+                <span><i class="fas fa-eye"></i> <span id="viewCount">283</span>+ بازدید</span>
                 <span><i class="fas fa-gamepad"></i> ۳ بازی فعال</span>
             </div>
         </header>
@@ -496,7 +651,7 @@
             </div>
         </section>
 
-        <!-- 💰 بخش حمایت -->
+        <!-- 💰 بخش دونیت با مبلغ دلخواه -->
         <section class="donation-section">
             <div class="donation-content">
                 <h2 class="donation-title"><i class="fas fa-crown"></i> حمایت از تولید محتوا</h2>
@@ -506,14 +661,20 @@
                 
                 <div class="amount-selector">
                     <button class="amount-btn" data-amount="10000">۱۰,۰۰۰ تومان</button>
+                    <button class="amount-btn" data-amount="25000">۲۵,۰۰۰ تومان</button>
                     <button class="amount-btn active" data-amount="50000">۵۰,۰۰۰ تومان</button>
                     <button class="amount-btn" data-amount="100000">۱۰۰,۰۰۰ تومان</button>
                     <button class="amount-btn" data-amount="200000">۲۰۰,۰۰۰ تومان</button>
                 </div>
                 
+                <div class="custom-amount">
+                    <input type="number" id="customAmount" class="custom-input" placeholder="مبلغ دلخواه (تومان)" min="1000" step="1000">
+                    <button class="amount-btn" onclick="useCustomAmount()">استفاده از این مبلغ</button>
+                </div>
+                
                 <div class="donate-action">
-                    <button class="donate-main-btn" onclick="processDonation()">
-                        <i class="fas fa-donate"></i> حمایت مالی از طریق درگاه پرداخت
+                    <button id="donateButton" class="donate-main-btn">
+                        <i class="fas fa-donate"></i> حمایت مالی
                     </button>
                 </div>
                 
@@ -523,72 +684,252 @@
             </div>
         </section>
 
+        <!-- 💬 بخش کامنت‌ها -->
+        <section class="comments-section">
+            <h2 class="section-title"><i class="fas fa-comments"></i> نظرات و گفتگو</h2>
+            
+            <div class="comment-form">
+                <h3 style="color: #88ccff; margin-bottom: 20px; text-align: center;">نظر خود را بنویسید</h3>
+                <div class="form-group">
+                    <label for="commentName"><i class="fas fa-user"></i> نام شما:</label>
+                    <input type="text" id="commentName" class="form-input" placeholder="نام یا نام کاربری" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="commentText"><i class="fas fa-comment"></i> نظر شما:</label>
+                    <textarea id="commentText" class="form-input" placeholder="نظر، پیشنهاد، سوال یا بازخورد خود را بنویسید..." required></textarea>
+                </div>
+                
+                <div style="text-align: center;">
+                    <button onclick="submitComment()" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> ارسال نظر
+                    </button>
+                </div>
+            </div>
+            
+            <div class="comments-list" id="commentsList">
+                <div class="no-comments">
+                    <i class="fas fa-comment-slash" style="font-size: 2rem; margin-bottom: 15px;"></i>
+                    <p>هنوز نظری ثبت نشده است. اولین نفری باشید که نظر می‌دهد!</p>
+                </div>
+            </div>
+        </section>
+
         <!-- 🏁 فوتر -->
         <footer class="footer">
             <div class="footer-links">
                 <a href="https://www.aparat.com/Victoriousmahdi" target="_blank"><i class="fas fa-video"></i> آپارات</a>
                 <a href="https://web.rubika.ir/#c=c0CztlG03a997ee9f474089c7e1c352b" target="_blank"><i class="fas fa-comment-dots"></i> روبیکا</a>
-                <a href="#" onclick="alert('سایت رسمی: https://ganganirmahdi-dev.github.io/vicmahdi/')"><i class="fas fa-globe"></i> سایت</a>
+                <a href="#" onclick="window.location.reload()"><i class="fas fa-sync-alt"></i> رفرش</a>
             </div>
             <p>© 2024 Victoriousmahdi - کلیه حقوق محفوظ است</p>
-            <p style="font-size: 0.8rem; margin-top: 10px; color: #666;">بهینه‌شده برای موتورهای جستجو</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; color: #666;">
+                بهینه‌شده برای موتورهای جستجو | 
+                <a href="#" style="color: #666; text-decoration: underline;" onclick="showAdminPanel()">مدیریت</a>
+            </p>
         </footer>
     </div>
 
     <script>
-        // 🎮 سیستم انتخاب مبلغ
-        const amountButtons = document.querySelectorAll('.amount-btn');
+        // ==================== سیستم دونیت ====================
         let selectedAmount = 50000;
+        const amountButtons = document.querySelectorAll('.amount-btn');
+        const donateButton = document.getElementById('donateButton');
         
+        // انتخاب مبلغ از دکمه‌ها
         amountButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // حذف کلاس active از همه
+            if (button.getAttribute('data-amount')) {
+                button.addEventListener('click', function() {
+                    // حذف کلاس active از همه
+                    amountButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // اضافه کردن به دکمه انتخاب شده
+                    this.classList.add('active');
+                    
+                    // ذخیره مبلغ انتخاب شده
+                    selectedAmount = parseInt(this.getAttribute('data-amount'));
+                    document.getElementById('customAmount').value = selectedAmount;
+                    updateDonateButton();
+                });
+            }
+        });
+        
+        // استفاده از مبلغ دلخواه
+        function useCustomAmount() {
+            const customInput = document.getElementById('customAmount');
+            const amount = parseInt(customInput.value);
+            
+            if (amount && amount >= 1000) {
+                selectedAmount = amount;
+                
+                // حذف active از دکمه‌های دیگر
                 amountButtons.forEach(btn => btn.classList.remove('active'));
                 
-                // اضافه کردن به دکمه انتخاب شده
-                this.classList.add('active');
-                
-                // ذخیره مبلغ انتخاب شده
-                selectedAmount = this.getAttribute('data-amount');
-            });
-        });
-        
-        // 💰 پردازش حمایت مالی
-        function processDonation() {
-            window.open(`https://victoriousmahdi.ir.page/?amount=${selectedAmount}`, '_blank');
-        }
-        
-        // ✨ افکت‌های تعاملی
-        document.querySelectorAll('.game-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-10px)';
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-            });
-        });
-        
-        // 📱 وضعیت آنلاین
-        function updateOnlineStatus() {
-            const now = new Date();
-            const hours = now.getHours();
-            const status = document.querySelector('.online-status');
-            
-            if (hours >= 16 && hours <= 23) {
-                status.style.background = '#00ff7b';
-                status.title = 'آنلاین - در حال گیمینگ';
-            } else if (hours >= 10 && hours < 16) {
-                status.style.background = '#ffcc00';
-                status.title = 'آنلاین - در حال تدوین';
+                updateDonateButton();
+                alert(`مبلغ ${amount.toLocaleString()} تومان انتخاب شد!`);
             } else {
-                status.style.background = '#ff4757';
-                status.title = 'آفلاین - به زودی برمی‌گردم';
+                alert('لطفاً مبلغ معتبری وارد کنید (حداقل ۱,۰۰۰ تومان)');
             }
         }
         
-        updateOnlineStatus();
-        setInterval(updateOnlineStatus, 60000); // هر دقیقه آپدیت کن
-    </script>
-</body>
-</html>
+        // به‌روزرسانی دکمه دونیت
+        function updateDonateButton() {
+            donateButton.innerHTML = `<i class="fas fa-donate"></i> حمایت با ${selectedAmount.toLocaleString()} تومان`;
+        }
+        
+        // پردازش پرداخت
+        donateButton.addEventListener('click', function() {
+            window.open(`https://victoriousmahdi.ir.page/?amount=${selectedAmount}`, '_blank');
+        });
+        
+        // اعتبارسنجی مبلغ دلخواه
+        document.getElementById('customAmount').addEventListener('input', function(e) {
+            let value = parseInt(this.value);
+            if (value < 1000) this.value = 1000;
+            if (value > 10000000) this.value = 10000000;
+        });
+        
+        // مقدار اولیه
+        document.getElementById('customAmount').value = selectedAmount;
+        updateDonateButton();
+        
+        // ==================== سیستم کامنت‌ها ====================
+        let comments = [];
+        
+        // بارگذاری کامنت‌ها از localStorage
+        function loadComments() {
+            const savedComments = localStorage.getItem('victoriousmahdi_comments');
+            if (savedComments) {
+                comments = JSON.parse(savedComments);
+                displayComments();
+            }
+        }
+        
+        // نمایش کامنت‌ها
+        function displayComments() {
+            const commentsList = document.getElementById('commentsList');
+            
+            if (comments.length === 0) {
+                commentsList.innerHTML = `
+                    <div class="no-comments">
+                        <i class="fas fa-comment-slash" style="font-size: 2rem; margin-bottom: 15px;"></i>
+                        <p>هنوز نظری ثبت نشده است. اولین نفری باشید که نظر می‌دهد!</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let commentsHTML = '';
+            
+            // نمایش کامنت‌های جدیدتر اول
+            comments.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach(comment => {
+                const date = new Date(comment.date).toLocaleDateString('fa-IR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                commentsHTML += `
+                    <div class="comment" data-id="${comment.id}">
+                        <div class="comment-header">
+                            <div class="comment-author">
+                                <i class="fas fa-user-circle" style="color: #4dccbd;"></i>
+                                <span class="author-name">${comment.name}</span>
+                            </div>
+                            <div class="comment-date">
+                                <i class="far fa-clock"></i> ${date}
+                            </div>
+                        </div>
+                        <div class="comment-content">
+                            ${comment.text}
+                        </div>
+                        ${comment.reply ? `
+                        <div class="admin-reply">
+                            <div class="reply-header">
+                                <i class="fas fa-reply"></i>
+                                پاسخ Victoriousmahdi:
+                            </div>
+                            <div class="comment-content">
+                                ${comment.reply}
+                            </div>
+                        </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+            
+            commentsList.innerHTML = commentsHTML;
+        }
+        
+        // ارسال کامنت جدید
+        function submitComment() {
+            const nameInput = document.getElementById('commentName');
+            const textInput = document.getElementById('commentText');
+            
+            const name = nameInput.value.trim();
+            const text = textInput.value.trim();
+            
+            if (!name || !text) {
+                alert('لطفاً نام و نظر خود را وارد کنید.');
+                return;
+            }
+            
+            if (text.length < 5) {
+                alert('نظر شما باید حداقل ۵ حرف باشد.');
+                return;
+            }
+            
+            const newComment = {
+                id: Date.now(),
+                name: name,
+                text: text,
+                date: new Date().toISOString(),
+                reply: null
+            };
+            
+            comments.push(newComment);
+            saveComments();
+            
+            // پاک کردن فرم
+            nameInput.value = '';
+            textInput.value = '';
+            
+            // نمایش پیام موفقیت
+            alert('نظر شما با موفقیت ثبت شد! ممنون از بازخورد شما.');
+            
+            // نمایش مجدد کامنت‌ها
+            displayComments();
+        }
+        
+        // ذخیره کامنت‌ها در localStorage
+        function saveComments() {
+            localStorage.setItem('victoriousmahdi_comments', JSON.stringify(comments));
+        }
+        
+        // ==================== پنل مدیریت ====================
+        function showAdminPanel() {
+            const password = prompt('رمز مدیریت را وارد کنید:');
+            if (password === 'mahdi123') { // می‌توانی این رمز را تغییر دهی
+                let adminHTML = `
+                    <div style="background: rgba(0,0,0,0.95); position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 10000; padding: 20px; overflow-y: auto;">
+                        <div style="background: #1a2b3c; max-width: 800px; margin: 0 auto; padding: 20px; border-radius: 15px; color: white;">
+                            <h2 style="color: #4dccbd; text-align: center; margin-bottom: 20px;">
+                                <i class="fas fa-cog"></i> پنل مدیریت (${comments.length} نظر)
+                            </h2>
+                            <button onclick="document.body.removeChild(this.parentElement.parentElement)" 
+                                    style="background: #ff6b6b; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-bottom: 20px;">
+                                بستن پنل
+                            </button>
+                `;
+                
+                comments.forEach((comment, index) => {
+                    const date = new Date(comment.date).toLocaleDateString('fa-IR');
+                    adminHTML += `
+                        <div style="background: rgba(255,255,255,0.1); padding: 15px; margin-bottom: 15px; border-radius: 10px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <strong style="color: #4dccbd;">${comment.name}</strong>
+                                <span style="color: #aaa; font-size: 0.9em;">${date}</span>
+                            </div>
+                            <p style="
