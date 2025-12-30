@@ -409,7 +409,7 @@
             box-shadow: 0 15px 30px rgba(255, 42, 109, 0.3);
         }
         
-        /* 💰 بخش دونیت کریستالی */
+        /* 💰 بخش دونیت کریستالی با مبالغ پیشفرض */
         .donation-section {
             padding: 100px 0;
             position: relative;
@@ -450,6 +450,40 @@
             100% { transform: rotate(360deg); }
         }
         
+        /* دکمه‌های مبلغ پیشفرض */
+        .donate-amounts {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .amount-btn {
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--neon-cyan);
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .amount-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 234, 0.3);
+        }
+        
+        .amount-btn.active {
+            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green));
+            border-color: var(--neon-green);
+            color: #000;
+            transform: scale(1.05);
+        }
+        
+        /* دکمه پرداخت */
         .donate-btn {
             background: linear-gradient(45deg, var(--neon-green), var(--neon-cyan));
             color: white;
@@ -601,6 +635,8 @@
             .games-grid, .channels-grid { grid-template-columns: 1fr; }
             .command-panel { width: 100%; right: -100%; }
             .hero { padding: 140px 0 60px; }
+            .donate-amounts { gap: 10px; }
+            .amount-btn { min-width: 100px; padding: 12px 15px; }
         }
     </style>
 </head>
@@ -613,12 +649,13 @@
         <i class="fas fa-terminal"></i> اتاق فرماندهی
     </button>
     
-    <!-- صفحه لاگین -->
+    <!-- صفحه لاگین (رمز نمایش داده نمی‌شود) -->
     <div class="login-overlay" id="loginOverlay">
         <div class="login-box">
             <h2 style="color: var(--neon-cyan); margin-bottom: 30px;">
                 <i class="fas fa-shield-alt"></i> ورود مدیریتی
             </h2>
+            <input type="password" id="adminPassword" placeholder="رمز عبور را وارد کنید" 
                    class="form-input" style="text-align: center;">
             <button onclick="checkPassword()" 
                     style="width: 100%; padding: 15px; background: var(--neon-pink); color: white; border: none; border-radius: 10px; cursor: pointer; font-size: 1.1rem;">
@@ -783,7 +820,7 @@
         </div>
     </section>
     
-    <!-- دونیت -->
+    <!-- دونیت با مبالغ پیشفرض -->
     <section class="donation-section">
         <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
             <h2 class="section-title">حمایت از امپراتوری</h2>
@@ -793,9 +830,43 @@
                         هر سکه حمایت شما، یک قدم به سوی تاج‌وتخت جهانی گیمینگ!
                     </p>
                     
-                    <div style="text-align: center;">
-                        <a href="https://victoriousmahdi.ir.page" target="_blank" class="donate-btn">
-                            <i class="fas fa-gem"></i> حمایت مالی از طریق درگاه پرداخت
+                    <!-- مبالغ پیشفرض -->
+                    <div class="donate-amounts">
+                        <button class="amount-btn" onclick="selectAmount(10000)">
+                            <div style="font-size: 1.5rem; font-weight: bold;">۱۰,۰۰۰</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">تومان</div>
+                        </button>
+                        
+                        <button class="amount-btn" onclick="selectAmount(50000)">
+                            <div style="font-size: 1.5rem; font-weight: bold;">۵۰,۰۰۰</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">تومان</div>
+                        </button>
+                        
+                        <button class="amount-btn" onclick="selectAmount(100000)">
+                            <div style="font-size: 1.5rem; font-weight: bold;">۱۰۰,۰۰۰</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">تومان</div>
+                        </button>
+                        
+                        <button class="amount-btn" onclick="selectAmount(200000)">
+                            <div style="font-size: 1.5rem; font-weight: bold;">۲۰۰,۰۰۰</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">تومان</div>
+                        </button>
+                    </div>
+                    
+                    <!-- مبلغ دلخواه -->
+                    <div style="margin: 30px 0;">
+                        <div style="text-align: center; margin-bottom: 15px; color: rgba(255,255,255,0.8);">
+                            <i class="fas fa-edit"></i> یا مبلغ دلخواه:
+                        </div>
+                        <input type="number" id="customAmount" placeholder="مبلغ دلخواه (تومان)" 
+                               class="form-input" style="max-width: 300px; margin: 0 auto; display: block; text-align: center;">
+                    </div>
+                    
+                    <!-- دکمه پرداخت -->
+                    <div style="text-align: center; margin-top: 40px;">
+                        <a href="https://victoriousmahdi.ir.page" target="_blank" id="donateButton" class="donate-btn">
+                            <i class="fas fa-gem"></i> 
+                            <span id="donateText">حمایت مالی از طریق درگاه پرداخت</span>
                         </a>
                     </div>
                     
@@ -816,7 +887,7 @@
             <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 30px;">
                 امپراتوری گیمینگ فارسی | هر بازی یک افسانه، هر بازیکن یک قهرمان
             </p>
-            <div style="display: flex; justify-content: center; gap: 30px; margin: 40px 0;">
+            <div style="display: flex; justify-content: center; gap: 30px; margin: 40px 0; flex-wrap: wrap;">
                 <a href="https://www.aparat.com/Victoriousmahdi" target="_blank" 
                    style="color: rgba(255,255,255,0.8); text-decoration: none; display: flex; align-items: center; gap: 10px;">
                     <i class="fas fa-play-circle"></i> آپارات
@@ -839,7 +910,7 @@
     <script>
         // ==================== اتاق فرماندهی ====================
         let isAuthenticated = false;
-        const ADMIN_PASSWORD = "mahdi123";
+        const ADMIN_PASSWORD = "mahdi123"; // رمز مخفی - فقط تو می‌دونی
         
         document.getElementById('commandToggle').addEventListener('click', function() {
             if (!isAuthenticated) {
@@ -937,6 +1008,55 @@
                 comments = [];
                 renderComments();
                 showNotification('✅ همه نظرات پاک شدند.', 'success');
+            }
+        }
+        
+        // ==================== سیستم دونیت ====================
+        let selectedAmount = 0;
+        
+        function selectAmount(amount) {
+            selectedAmount = amount;
+            
+            // حذف انتخاب قبلی
+            document.querySelectorAll('.amount-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // هایلایت دکمه انتخاب شده
+            event.currentTarget.classList.add('active');
+            
+            // پاک کردن مبلغ دلخواه
+            document.getElementById('customAmount').value = '';
+            
+            // آپدیت لینک پرداخت
+            updateDonateLink();
+        }
+        
+        // وقتی مبلغ دلخواه وارد شد
+        document.getElementById('customAmount').addEventListener('input', function() {
+            if (this.value) {
+                selectedAmount = parseInt(this.value);
+                
+                // حذف انتخاب از دکمه‌ها
+                document.querySelectorAll('.amount-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                updateDonateLink();
+            }
+        });
+        
+        function updateDonateLink() {
+            const donateBtn = document.getElementById('donateButton');
+            const donateText = document.getElementById('donateText');
+            
+            if (selectedAmount > 0) {
+                // اضافه کردن مبلغ به لینک درگاه پرداخت
+                donateBtn.href = `https://victoriousmahdi.ir.page/?amount=${selectedAmount}`;
+                donateText.textContent = `پرداخت ${selectedAmount.toLocaleString()} تومان`;
+            } else {
+                donateBtn.href = 'https://victoriousmahdi.ir.page';
+                donateText.textContent = 'حمایت مالی از طریق درگاه پرداخت';
             }
         }
         
@@ -1101,7 +1221,7 @@
                 });
             });
             
-            // اضافه کردن CSS برای انیمیشن ذرات
+            // اضافه کردن CSS برای انیمیشن‌ها
             const style = document.createElement('style');
             style.textContent = `
                 @keyframes floatParticle {
@@ -1116,7 +1236,7 @@
             `;
             document.head.appendChild(style);
             
-            console.log('🎮 امپراتوری گیمینگ با افکت‌های RGB بارگذاری شد!');
+            console.log('🎮 امپراتوری گیمینگ بارگذاری شد!');
         });
         
         // بستن پنل فرماندهی با کلیک خارج
