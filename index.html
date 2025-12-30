@@ -1162,6 +1162,111 @@
                     <div class="status-indicator" id="statusIndicator" title="آنلاین">
     <div class="status-dot"></div>
     <span class="status-text">آنلاین</span>
+                        .status-indicator {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid #00ffea;
+    animation: statusPulse 2s infinite;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #00ff7b;
+    box-shadow: 0 0 15px #00ff7b;
+}
+
+.status-text {
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+@keyframes statusPulse {
+    0%, 100% { 
+        transform: scale(1);
+        border-color: rgba(0, 255, 234, 0.5);
+    }
+    50% { 
+        transform: scale(1.05);
+        border-color: rgba(0, 255, 234, 1);
+        box-shadow: 0 0 30px rgba(0, 255, 234, 0.3);
+    }
+}
+
+/* حالت‌های مختلف */
+.status-indicator.online .status-dot { background: #00ff7b; box-shadow: 0 0 15px #00ff7b; }
+.status-indicator.offline .status-dot { background: #ff4757; box-shadow: 0 0 15px #ff4757; }
+.status-indicator.streaming .status-dot { 
+    background: #ff2a6d; 
+    box-shadow: 0 0 20px #ff2a6d;
+    animation: streamPulse 1s infinite;
+}
+
+@keyframes streamPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+                        // سیستم وضعیت آنلاین
+function updateOnlineStatus() {
+    const statusElement = document.getElementById('statusIndicator');
+    const statusText = statusElement.querySelector('.status-text');
+    
+    const now = new Date();
+    const hours = now.getHours();
+    const day = now.getDay(); // 0: یکشنبه
+    
+    // حذف همه کلاس‌ها
+    statusElement.classList.remove('online', 'offline', 'streaming');
+    
+    if (hours >= 18 && hours <= 23) {
+        // زمان استریم (۶ بعد از ظهر تا ۱۱ شب)
+        statusElement.classList.add('streaming');
+        statusText.textContent = 'در حال استریم';
+        statusElement.title = '🎮 در حال گیمینگ زنده!';
+    } else if (hours >= 10 && hours < 18) {
+        // آنلاین (۱۰ صبح تا ۶ عصر)
+        statusElement.classList.add('online');
+        statusText.textContent = 'آنلاین';
+        statusElement.title = 'در حال تدوین ویدیو';
+    } else if (day === 5 || day === 6) { // جمعه یا شنبه
+        statusElement.classList.add('online');
+        statusText.textContent = 'آنلاین';
+        statusElement.title = 'آخر هفته - فعال‌تر!';
+    } else {
+        // آفلاین
+        statusElement.classList.add('offline');
+        statusText.textContent = 'آفلاین';
+        statusElement.title = 'برمی‌گردم...';
+    }
+}
+
+// اجرا و تکرار هر دقیقه
+updateOnlineStatus();
+setInterval(updateOnlineStatus, 60000);
+
+// کلیک برای اطلاعات
+document.getElementById('statusIndicator').addEventListener('click', function() {
+    const status = this.classList.contains('online') ? 'آنلاین' :
+                   this.classList.contains('streaming') ? 'در حال استریم' : 'آفلاین';
+    
+    const message = status === 'آنلاین' ? '🏃‍♂️ الان آنلاینم!' :
+                    status === 'در حال استریم' ? '🎮 در حال گیمینگ زنده!' :
+                    '💤 الان آفلاینم. صبر کنید!';
+    
+    alert(message);
+});
 </div>
                 </div>
             </div>
