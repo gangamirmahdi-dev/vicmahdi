@@ -4,36 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 🔥 SEO ULTIMATE -->
-    <title>Victoriousmahdi | سلطان گیمینگ فارسی - ماین‌کرافت، فری فایر، بدوارز</title>
-    <meta name="description" content="کانال رسمی Victoriousmahdi | بهترین محتوای گیمینگ فارسی - گیم‌پلی حرفه‌ای ماین‌کرافت، فری فایر و بدوارز">
-    <meta name="keywords" content="Victoriousmahdi, گیمینگ, ماین‌کرافت, فری فایر, بدوارز, گیم‌پلی, آپارات, روبیکا">
-    <meta name="author" content="Victoriousmahdi">
-    <meta name="robots" content="index, follow">
+    <!-- 🔥 SEO -->
+    <title>Victoriousmahdi | امپراتور گیمینگ فارسی - طراحی انحصاری</title>
+    <meta name="description" content="Victoriousmahdi | طراحی منحصربه‌فرد گیمینگ با انیمیشن‌های اختصاصی - ماین‌کرافت، فری فایر، کالاف، بدوارز">
     <meta name="google-site-verification" content="uk8WWEXAXqJNa74e8ZBCzZQcwuRP8UkiXnQldh3n8_w" />
     
-    <!-- 🌐 Open Graph -->
-    <meta property="og:title" content="Victoriousmahdi | سلطان گیمینگ فارسی">
-    <meta property="og:description" content="بهترین محتوای گیمینگ فارسی - ماین‌کرافت، فری فایر، بدوارز">
-    <meta property="og:image" content="vic.jpg">
-    <meta property="og:url" content="https://victoriousmahdi.ir.page">
-    <meta property="og:type" content="website">
-    
-    <!-- آیکون‌ها و فونت‌ها -->
+    <!-- آیکون‌ها -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- فونت‌های گیمینگ -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
     
     <style>
-        /* 🌌 متغیرهای رنگی RGB */
+        /* 🌌 متغیرهای تم‌های مختلف */
         :root {
-            --neon-pink: #ff2a6d;
-            --neon-cyan: #00ffea;
-            --neon-green: #05ffa1;
-            --neon-purple: #8b5cf6;
-            --neon-yellow: #ffd166;
-            --dark-bg: #0a0a16;
+            --theme: 'cyberpunk';
+            
+            /* تم سایبرپانک (پیش‌فرض) */
+            --primary: #ff2a6d;
+            --secondary: #00ffea;
+            --accent: #05ffa1;
+            --dark: #0a0a16;
             --darker: #050510;
-            --card-bg: rgba(30, 35, 60, 0.7);
+            --glow: 0 0 30px;
+        }
+        
+        /* تم ماتریکس */
+        .matrix-theme {
+            --primary: #00ff41;
+            --secondary: #008f11;
+            --accent: #00ff9d;
+            --dark: #0a0a0a;
+            --darker: #000000;
+            --glow: 0 0 40px;
+        }
+        
+        /* تم نئون */
+        .neon-theme {
+            --primary: #ff0080;
+            --secondary: #00ffcc;
+            --accent: #ffcc00;
+            --dark: #0f0f23;
+            --darker: #070714;
+            --glow: 0 0 50px;
+        }
+        
+        /* تم آتشین */
+        .fire-theme {
+            --primary: #ff4400;
+            --secondary: #ff9500;
+            --accent: #ffcc00;
+            --dark: #160a0a;
+            --darker: #0a0505;
+            --glow: 0 0 35px;
+        }
+        
+        /* تم یخی */
+        .ice-theme {
+            --primary: #00a8ff;
+            --secondary: #0097e6;
+            --accent: #00ffea;
+            --dark: #0a0a16;
+            --darker: #050510;
+            --glow: 0 0 30px;
         }
         
         * {
@@ -43,308 +76,208 @@
         }
         
         body {
-            background: var(--dark-bg);
+            background: var(--dark);
             color: white;
-            font-family: 'Vazirmatn', sans-serif;
+            font-family: 'Rajdhani', sans-serif;
             direction: rtl;
             overflow-x: hidden;
             min-height: 100vh;
+            transition: background 0.5s;
         }
         
-        /* ✨ پس‌زمینه ماتریکس پویا */
-        .matrix-bg {
+        /* 🌟 انیمیشن‌های سفارشی */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+        
+        @keyframes hologram {
+            0% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+            100% { opacity: 0.3; }
+        }
+        
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+        
+        @keyframes rgbGlow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        
+        /* ✨ بک‌گراند پویا */
+        .dynamic-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            z-index: -3;
             background: 
-                linear-gradient(rgba(10, 10, 22, 0.9), rgba(10, 10, 22, 0.9)),
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 234, 0.05) 2px, rgba(0, 255, 234, 0.05) 4px);
-            z-index: -2;
-            animation: matrixFlow 20s linear infinite;
+                radial-gradient(circle at 20% 50%, rgba(var(--primary-rgb), 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(var(--secondary-rgb), 0.1) 0%, transparent 50%),
+                linear-gradient(45deg, var(--darker) 0%, var(--dark) 100%);
+            animation: hologram 8s infinite alternate;
         }
         
-        @keyframes matrixFlow {
-            0% { background-position: 0 0; }
-            100% { background-position: 0 100px; }
-        }
-        
-        /* ✨ ذرات شناور */
-        .particles {
+        /* 📡 اسکن‌لاین ماتریکس */
+        .scanline {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-        
-        /* 🎮 هدر با افکت RGB */
-        .hero {
-            text-align: center;
-            padding: 180px 0 100px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--neon-pink) 0%, transparent 70%);
-            animation: pulseRGB 4s infinite alternate;
-            filter: blur(60px);
+            height: 2px;
+            background: linear-gradient(to bottom, transparent, var(--secondary), transparent);
+            z-index: -2;
+            animation: scanline 4s linear infinite;
             opacity: 0.3;
-            z-index: -1;
         }
         
-        @keyframes pulseRGB {
-            0% { 
-                filter: blur(60px) hue-rotate(0deg);
-                opacity: 0.3;
-            }
-            100% { 
-                filter: blur(80px) hue-rotate(360deg);
-                opacity: 0.5;
-            }
-        }
-        
-        .profile-hologram {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            margin: 0 auto 40px;
+        /* 🎮 کانتینر اصلی */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
             position: relative;
-            background: conic-gradient(from 0deg, 
-                var(--neon-pink), 
-                var(--neon-cyan), 
-                var(--neon-green), 
-                var(--neon-purple), 
-                var(--neon-pink)
-            );
-            animation: rotateHologram 8s linear infinite;
-            padding: 8px;
+            z-index: 1;
         }
         
-        @keyframes rotateHologram {
-            100% { transform: rotate(360deg); }
-        }
-        
-        .profile-frame {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
+        /* 🏆 هیرو با افکت هولوگرام */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
             overflow: hidden;
-            border: 6px solid var(--dark-bg);
-            background: var(--dark-bg);
+            padding: 100px 0;
         }
         
-        .profile-img {
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hologram-container {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 50px;
+            position: relative;
+            perspective: 1000px;
+        }
+        
+        .hologram-cube {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            filter: saturate(1.3) contrast(1.1);
-            transition: transform 0.5s;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: float 6s ease-in-out infinite;
         }
         
-        .profile-img:hover {
-            transform: scale(1.05);
+        .hologram-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--secondary);
+            background: rgba(var(--secondary-rgb), 0.1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hologram-face img {
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+            border-radius: 50%;
             filter: saturate(1.5) contrast(1.2);
         }
         
-        .main-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
-            font-weight: 900;
-            background: linear-gradient(90deg, 
-                var(--neon-pink), 
-                var(--neon-cyan), 
-                var(--neon-green), 
-                var(--neon-purple)
-            );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: titleShine 3s linear infinite;
-            margin: 20px 0;
+        /* 🎯 وضعیت آنلاین */
+        .status-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 2px solid var(--secondary);
         }
         
-        @keyframes titleShine {
-            to { background-position: 200% center; }
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
         }
         
-        /* 📊 آمار با افکت گیمینگ */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            max-width: 900px;
-            margin: 50px auto;
+        .status-online .status-dot {
+            background: #00ff7b;
+            box-shadow: 0 0 20px #00ff7b;
         }
         
-        .stat-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
+        .status-streaming .status-dot {
+            background: var(--primary);
+            box-shadow: 0 0 20px var(--primary);
+            animation: pulse 1s infinite;
         }
         
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--neon-pink), var(--neon-cyan));
-            transform: scaleX(0);
-            transition: transform 0.3s;
+        .status-offline .status-dot {
+            background: #ff4757;
+            box-shadow: 0 0 20px #ff4757;
         }
         
-        .stat-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--neon-cyan);
-            box-shadow: 0 15px 30px rgba(0, 255, 234, 0.2);
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
         
-        .stat-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .stat-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--neon-cyan);
-        }
-        
-        .stat-number {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 10px 0;
-        }
-        
-        /* 🎮 بخش بازی‌ها با افکت 3D */
-        .games-section {
+        /* 🎮 بخش حوزه‌های گیمینگ */
+        .gaming-realms {
             padding: 100px 0;
-            position: relative;
         }
         
-        .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 60px;
-            color: white;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--neon-pink), var(--neon-cyan));
-            border-radius: 2px;
-        }
-        
-        .games-grid {
+        .realms-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
+            margin-top: 60px;
         }
         
-        .game-card {
-            background: linear-gradient(145deg, 
-                rgba(30, 35, 60, 0.8),
-                rgba(40, 45, 70, 0.8)
-            );
+        .realm-card {
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            border: 1px solid rgba(92, 107, 192, 0.3);
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .game-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, 
-                transparent 30%, 
-                rgba(0, 255, 234, 0.1) 50%, 
-                transparent 70%
-            );
-            transform: translateX(-100%);
-            transition: transform 0.6s;
-        }
-        
-        .game-card:hover {
-            transform: translateY(-15px);
-            border-color: var(--neon-cyan);
-            box-shadow: 0 25px 50px rgba(0, 255, 234, 0.2);
-        }
-        
-        .game-card:hover::before {
-            transform: translateX(100%);
-        }
-        
-        .game-icon {
-            font-size: 4rem;
-            margin-bottom: 25px;
-            display: block;
-            filter: drop-shadow(0 0 15px currentColor);
-        }
-        
-        .minecraft .game-icon { color: #6bc46d; }
-        .freefire .game-icon { color: #ff9a3c; }
-        .bedwars .game-icon { color: #ff6b6b; }
-        
-        /* 📱 کانال‌ها با افکت نئون */
-        .channels-section {
-            padding: 100px 0;
-            background: rgba(0, 0, 0, 0.3);
-        }
-        
-        .channels-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        
-        .channel-card {
-            background: rgba(30, 30, 40, 0.8);
-            border-radius: 20px;
-            padding: 50px 40px;
+            padding: 40px;
             border: 2px solid transparent;
-            background-clip: padding-box;
-            transition: all 0.4s;
             position: relative;
+            overflow: hidden;
+            transition: all 0.4s;
+            min-height: 400px;
         }
         
-        .channel-card::before {
+        .realm-card::before {
             content: '';
             position: absolute;
             top: -2px;
@@ -352,80 +285,59 @@
             right: -2px;
             bottom: -2px;
             background: linear-gradient(45deg, 
-                var(--neon-pink), 
-                var(--neon-cyan), 
-                var(--neon-green)
+                var(--primary), 
+                var(--secondary), 
+                var(--accent)
             );
-            border-radius: 22px;
             z-index: -1;
             opacity: 0;
             transition: opacity 0.4s;
         }
         
-        .channel-card:hover::before {
+        .realm-card:hover::before {
             opacity: 1;
-            animation: neonGlow 2s infinite alternate;
+            animation: rgbGlow 2s infinite linear;
         }
         
-        @keyframes neonGlow {
-            0% { filter: hue-rotate(0deg) blur(0px); }
-            100% { filter: hue-rotate(360deg) blur(5px); }
+        .realm-card:hover {
+            transform: translateY(-10px) scale(1.02);
         }
         
-        .channel-icon {
-            width: 100px;
-            height: 100px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, #ff2e63, #ff6b9d);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 30px;
-            font-size: 3rem;
-            color: white;
+        /* 🎯 افکت‌های مختلف برای هر بازی */
+        .realm-fps {
+            animation: glitch 0.5s infinite alternate;
         }
         
-        .rubika .channel-icon {
-            background: linear-gradient(135deg, #8b5cf6, #c4b5fd);
+        .realm-minecraft {
+            animation: float 4s ease-in-out infinite;
         }
         
-        .channel-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: linear-gradient(45deg, var(--neon-pink), var(--neon-cyan));
-            color: white;
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: all 0.3s;
+        .realm-bedwars {
+            border-image: linear-gradient(45deg, var(--primary), var(--secondary)) 1;
         }
         
-        .channel-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 42, 109, 0.3);
+        .realm-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            display: block;
+            text-align: center;
         }
         
-        /* 💰 بخش دونیت کریستالی با مبالغ پیشفرض */
+        /* 💰 بخش دونیت */
         .donation-section {
             padding: 100px 0;
+            background: rgba(0, 0, 0, 0.3);
             position: relative;
+            overflow: hidden;
         }
         
         .donation-crystal {
-            background: linear-gradient(135deg, 
-                rgba(26, 35, 126, 0.8),
-                rgba(49, 27, 146, 0.8)
-            );
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 30px;
-            padding: 60px 50px;
-            border: 2px solid var(--neon-purple);
-            box-shadow: 
-                inset 0 0 50px rgba(139, 92, 246, 0.2),
-                0 0 80px rgba(139, 92, 246, 0.2);
+            padding: 60px 40px;
+            border: 2px solid var(--secondary);
             position: relative;
             overflow: hidden;
         }
@@ -437,161 +349,83 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(
-                circle,
-                rgba(255, 255, 255, 0.1) 0%,
-                transparent 70%
+            background: conic-gradient(
+                transparent,
+                var(--secondary),
+                transparent,
+                var(--primary),
+                transparent
             );
-            animation: crystalRotate 20s linear infinite;
+            animation: crystalRotate 10s linear infinite;
         }
         
         @keyframes crystalRotate {
-            0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
         
-        /* دکمه‌های مبلغ پیشفرض */
-        .donate-amounts {
-            display: flex;
+        .amount-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 15px;
-            justify-content: center;
-            margin: 30px 0;
-            flex-wrap: wrap;
+            margin: 40px 0;
         }
         
         .amount-btn {
-            padding: 15px 25px;
+            padding: 20px;
             background: rgba(255, 255, 255, 0.1);
-            border: 2px solid var(--neon-cyan);
+            border: 2px solid var(--secondary);
             color: white;
-            border-radius: 10px;
+            border-radius: 15px;
             cursor: pointer;
             transition: all 0.3s;
-            min-width: 120px;
-            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
         }
         
         .amount-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 255, 234, 0.3);
-        }
-        
-        .amount-btn.active {
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green));
-            border-color: var(--neon-green);
-            color: #000;
+            background: var(--secondary);
+            color: var(--dark);
             transform: scale(1.05);
+            box-shadow: var(--glow) var(--secondary);
         }
         
-        /* دکمه پرداخت */
-        .donate-btn {
-            background: linear-gradient(45deg, var(--neon-green), var(--neon-cyan));
-            color: white;
-            border: none;
-            padding: 20px 50px;
-            border-radius: 50px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
+        /* 📝 بخش متن داینامیک */
+        .dynamic-text-section {
+            padding: 80px 0;
+            background: rgba(0, 0, 0, 0.2);
         }
         
-        .donate-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(5, 255, 161, 0.4);
-        }
-        
-        /* 💬 بخش نظرات */
-        .comments-section {
-            padding: 100px 0;
-            background: rgba(0, 0, 0, 0.3);
-        }
-        
-        #comments-container {
-            max-height: 400px;
-            overflow-y: auto;
-            padding: 20px;
+        .dynamic-text-display {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            margin-bottom: 30px;
-        }
-        
-        .comment {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            border-left: 4px solid var(--neon-cyan);
-        }
-        
-        .comment-form {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 15px;
-        }
-        
-        .form-input {
-            width: 100%;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            color: white;
-            margin-bottom: 20px;
-            font-size: 1rem;
+            border-radius: 20px;
+            border-left: 5px solid var(--primary);
+            animation: hologram 4s infinite alternate;
         }
         
         /* 🛡️ اتاق فرماندهی */
-        .command-btn {
+        .command-room {
             position: fixed;
             bottom: 30px;
             left: 30px;
-            background: linear-gradient(45deg, #ff4757, #ff6b81);
+            z-index: 1000;
+        }
+        
+        .command-btn {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
             color: white;
             border: none;
-            padding: 12px 25px;
+            padding: 15px 30px;
             border-radius: 50px;
             font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 0 20px rgba(255, 71, 87, 0.5);
-            z-index: 1000;
-            transition: all 0.3s;
-        }
-        
-        .command-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px rgba(255, 71, 87, 0.7);
-        }
-        
-        .login-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 10000;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .login-box {
-            background: var(--darker);
-            padding: 50px;
-            border-radius: 20px;
-            border: 2px solid var(--neon-pink);
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
+            animation: rgbGlow 3s infinite linear;
         }
         
         .command-panel {
@@ -605,353 +439,491 @@
             transition: right 0.3s;
             padding: 30px;
             overflow-y: auto;
-            border-left: 3px solid var(--neon-pink);
+            border-left: 5px solid var(--primary);
         }
         
         .command-panel.active {
             right: 0;
         }
         
-        .control-group {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        
-        /* 🏁 فوتر */
-        footer {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 60px 0 30px;
-            text-align: center;
-            margin-top: 100px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
         /* 📱 رسپانسیو */
         @media (max-width: 768px) {
-            .main-title { font-size: 2.5rem; }
-            .section-title { font-size: 2rem; }
-            .games-grid, .channels-grid { grid-template-columns: 1fr; }
-            .command-panel { width: 100%; right: -100%; }
-            .hero { padding: 140px 0 60px; }
-            .donate-amounts { gap: 10px; }
-            .amount-btn { min-width: 100px; padding: 12px 15px; }
+            .hologram-container {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .realms-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .command-panel {
+                width: 100%;
+                right: -100%;
+            }
         }
     </style>
 </head>
-<body>
-    <!-- پس‌زمینه ماتریکس -->
-    <div class="matrix-bg"></div>
+<body class="cyberpunk-theme">
+    <!-- 🌌 بک‌گراند پویا -->
+    <div class="dynamic-bg"></div>
+    <div class="scanline"></div>
     
-    <!-- دکمه اتاق فرماندهی -->
-    <button class="command-btn" id="commandToggle">
-        <i class="fas fa-terminal"></i> اتاق فرماندهی
-    </button>
+    <!-- 🎮 وضعیت آنلاین -->
+    <div class="status-indicator status-online" id="statusIndicator">
+        <div class="status-dot"></div>
+        <span id="statusText">آنلاین</span>
+    </div>
     
-    <!-- صفحه لاگین (رمز نمایش داده نمی‌شود) -->
-    <div class="login-overlay" id="loginOverlay">
-        <div class="login-box">
-            <h2 style="color: var(--neon-cyan); margin-bottom: 30px;">
-                <i class="fas fa-shield-alt"></i> ورود مدیریتی
+    <!-- 🛡️ اتاق فرماندهی -->
+    <div class="command-room">
+        <button class="command-btn" onclick="toggleCommandPanel()">
+            <i class="fas fa-terminal"></i> اتاق فرماندهی
+        </button>
+    </div>
+    
+    <!-- 🏆 هیرو -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hologram-container">
+                    <div class="hologram-cube">
+                        <div class="hologram-face" style="transform: rotateY(0deg) translateZ(150px);">
+                            <img src="vic.jpg" alt="Victoriousmahdi" 
+                                 onerror="this.src='https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=500&q=80'">
+                        </div>
+                    </div>
+                </div>
+                
+                <h1 style="font-family: 'Orbitron', sans-serif; font-size: 4rem; margin-bottom: 20px; background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: rgbGlow 3s infinite linear;">
+                    VICTORIOUSMAHDI
+                </h1>
+                
+                <div class="dynamic-text-display" id="dynamicText">
+                    <!-- متن داینامیک اینجا نمایش داده می‌شود -->
+                </div>
+                
+                <div style="margin-top: 40px; display: flex; gap: 20px; justify-content: center;">
+                    <a href="#gaming" class="glow-btn" style="padding: 15px 40px; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-family: 'Orbitron';">
+                        <i class="fas fa-gamepad"></i> حوزه‌های گیمینگ
+                    </a>
+                    <a href="#donation" class="glow-btn" style="padding: 15px 40px; background: var(--secondary); color: var(--dark); text-decoration: none; border-radius: 50px; font-family: 'Orbitron';">
+                        <i class="fas fa-gem"></i> حمایت از امپراتوری
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 🎮 حوزه‌های گیمینگ -->
+    <section id="gaming" class="gaming-realms">
+        <div class="container">
+            <h2 style="text-align: center; font-family: 'Orbitron'; font-size: 3rem; margin-bottom: 20px; color: var(--secondary);">
+                <i class="fas fa-crown"></i> قلمروهای گیمینگ
             </h2>
-            <input type="password" id="adminPassword" placeholder="رمز عبور را وارد کنید" 
-                   class="form-input" style="text-align: center;">
-            <button onclick="checkPassword()" 
-                    style="width: 100%; padding: 15px; background: var(--neon-pink); color: white; border: none; border-radius: 10px; cursor: pointer; font-size: 1.1rem;">
-                <i class="fas fa-sign-in-alt"></i> ورود به اتاق فرماندهی
-            </button>
-        </div>
-    </div>
-    
-    <!-- پنل فرماندهی -->
-    <div class="command-panel" id="commandPanel">
-        <h2 style="color: var(--neon-pink); margin-bottom: 30px; text-align: center;">
-            <i class="fas fa-crown"></i> اتاق فرماندهی
-        </h2>
-        
-        <div class="control-group">
-            <h3><i class="fas fa-chart-line"></i> مدیریت آمار</h3>
-            <input type="number" id="followersInput" value="189" class="form-input" placeholder="دنبال‌کنندگان">
-            <input type="number" id="viewsInput" value="283000" class="form-input" placeholder="بازدیدها">
-            <button onclick="updateStats()" style="width: 100%; padding: 12px; background: var(--neon-cyan); color: #000; border: none; border-radius: 8px; cursor: pointer;">
-                بروزرسانی آمار
-            </button>
-        </div>
-        
-        <div class="control-group">
-            <h3><i class="fas fa-comments"></i> مدیریت نظرات</h3>
-            <button onclick="addComment()" style="width: 100%; padding: 12px; background: var(--neon-cyan); color: #000; border: none; border-radius: 8px; cursor: pointer; margin-bottom: 10px;">
-                افزودن نظر جدید
-            </button>
-            <button onclick="clearComments()" style="width: 100%; padding: 12px; background: #ff4757; color: white; border: none; border-radius: 8px; cursor: pointer;">
-                پاک کردن همه نظرات
-            </button>
-        </div>
-        
-        <div class="control-group">
-            <h3><i class="fas fa-cog"></i> تنظیمات</h3>
-            <button onclick="saveSettings()" style="width: 100%; padding: 12px; background: var(--neon-purple); color: white; border: none; border-radius: 8px; cursor: pointer; margin-bottom: 10px;">
-                ذخیره تنظیمات
-            </button>
-            <button onclick="resetAll()" style="width: 100%; padding: 12px; background: #ff4757; color: white; border: none; border-radius: 8px; cursor: pointer;">
-                بازنشانی همه چیز
-            </button>
-        </div>
-    </div>
-    
-    <!-- هیرو -->
-    <section class="hero">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <div class="profile-hologram">
-                <div class="profile-frame">
-                    <img src="vic.jpg" alt="Victoriousmahdi" class="profile-img" 
-                         onerror="this.src='https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=500&q=80'">
-                </div>
-            </div>
             
-            <h1 class="main-title">VICTORIOUSMAHDI</h1>
-            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto;">
-                سلطان بلامنازع گیمینگ فارسی | افسانه‌های ماین‌کرافت • فری فایر • بدوارز
-            </p>
-            
-            <!-- آمار -->
-            <div class="stats">
-                <div class="stat-card">
-                    <i class="fas fa-users stat-icon"></i>
-                    <div class="stat-number" id="followersDisplay">189</div>
-                    <div>دنبال‌کننده وفادار</div>
+            <div class="realms-container">
+                <!-- فری فایر و کالاف -->
+                <div class="realm-card realm-fps">
+                    <i class="fas fa-fire realm-icon" style="color: #ff6b6b;"></i>
+                    <h3 style="font-family: 'Orbitron'; font-size: 2rem; margin-bottom: 20px; color: var(--primary);">
+                        فری فایر & کالاف
+                    </h3>
+                    <p style="line-height: 1.8; color: rgba(255,255,255,0.9);">
+                        🎯 شوتینگ حرفه‌ای | تاکتیک‌های استراتژیک<br>
+                        🔥 مسابقات تیمی | رکوردشکنی‌های حماسی<br>
+                        ⚔️ نبردهای بتل رویال | هماهنگی کامل تیمی
+                    </p>
+                    <div style="margin-top: 30px; display: flex; gap: 10px;">
+                        <span style="background: rgba(255,107,107,0.2); padding: 5px 15px; border-radius: 20px;">شوتر</span>
+                        <span style="background: rgba(255,107,107,0.2); padding: 5px 15px; border-radius: 20px;">تیمی</span>
+                        <span style="background: rgba(255,107,107,0.2); padding: 5px 15px; border-radius: 20px;">استراتژیک</span>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <i class="fas fa-eye stat-icon"></i>
-                    <div class="stat-number" id="viewsDisplay">283K</div>
-                    <div>بازدید حماسی</div>
+                
+                <!-- چالش‌های ماین‌کرافتی -->
+                <div class="realm-card realm-minecraft">
+                    <i class="fas fa-cube realm-icon" style="color: #6bc46d;"></i>
+                    <h3 style="font-family: 'Orbitron'; font-size: 2rem; margin-bottom: 20px; color: var(--primary);">
+                        ماین‌کرافت افسانه‌ای
+                    </h3>
+                    <p style="line-height: 1.8; color: rgba(255,255,255,0.9);">
+                        🏰 ساخت قلعه‌های حماسی | معماری خارق‌العاده<br>
+                        ⚔️ چالش‌های هاردکور | سوروایول افسانه‌ای<br>
+                        🔧 گیم‌مودهای اختصاصی | ردستون مهندسی شده
+                    </p>
+                    <div style="margin-top: 30px; display: flex; gap: 10px;">
+                        <span style="background: rgba(107,196,109,0.2); padding: 5px 15px; border-radius: 20px;">ساخت‌وساز</span>
+                        <span style="background: rgba(107,196,109,0.2); padding: 5px 15px; border-radius: 20px;">چالش</span>
+                        <span style="background: rgba(107,196,109,0.2); padding: 5px 15px; border-radius: 20px;">مود</span>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <i class="fas fa-trophy stat-icon"></i>
-                    <div class="stat-number">999+</div>
-                    <div>پیروزی افسانه‌ای</div>
+                
+                <!-- بدوارز و سرورها -->
+                <div class="realm-card realm-bedwars">
+                    <i class="fas fa-fist-raised realm-icon" style="color: #ffd166;"></i>
+                    <h3 style="font-family: 'Orbitron'; font-size: 2rem; margin-bottom: 20px; color: var(--primary);">
+                        بدوارز & سرورها
+                    </h3>
+                    <p style="line-height: 1.8; color: rgba(255,255,255,0.9);">
+                        🛡️ دفاع هوشمند | حمله‌های برق‌آسا<br>
+                        🤝 هماهنگی تیمی بی‌نقص | تاکتیک‌های پیشرفته<br>
+                        🚀 سرورهای اختصاصی | گیم‌پلی حرفه‌ای
+                    </p>
+                    <div style="margin-top: 30px; display: flex; gap: 10px;">
+                        <span style="background: rgba(255,209,102,0.2); padding: 5px 15px; border-radius: 20px;">تیمی</span>
+                        <span style="background: rgba(255,209,102,0.2); padding: 5px 15px; border-radius: 20px;">سرور</span>
+                        <span style="background: rgba(255,209,102,0.2); padding: 5px 15px; border-radius: 20px;">استراتژی</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- بازی‌ها -->
-    <section class="games-section">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <h2 class="section-title">قلمروهای گیمینگ</h2>
-            <div class="games-grid">
-                <div class="game-card minecraft">
-                    <i class="fas fa-cube game-icon"></i>
-                    <h3 style="font-size: 1.8rem; margin-bottom: 15px;">ماین‌کرافت</h3>
-                    <p style="color: rgba(255,255,255,0.8);">
-                        چالش‌های حماسی، سرورهای اختصاصی، معماری‌های افسانه‌ای
-                    </p>
-                </div>
-                <div class="game-card freefire">
-                    <i class="fas fa-fire game-icon"></i>
-                    <h3 style="font-size: 1.8rem; margin-bottom: 15px;">فری فایر</h3>
-                    <p style="color: rgba(255,255,255,0.8);">
-                        تاکتیک‌های استراتژیک، شوتینگ حرفه‌ای، پیروزی‌های حماسی
-                    </p>
-                </div>
-                <div class="game-card bedwars">
-                    <i class="fas fa-fist-raised game-icon"></i>
-                    <h3 style="font-size: 1.8rem; margin-bottom: 15px;">بدوارز</h3>
-                    <p style="color: rgba(255,255,255,0.8);">
-                        هماهنگی کامل تیمی، دفاع هوشمند، حمله‌های برق‌آسا
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- کانال‌ها -->
-    <section class="channels-section">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <h2 class="section-title">کانال‌های ارتباطی</h2>
-            <div class="channels-grid">
-                <div class="channel-card">
-                    <div class="channel-icon">
+    <!-- 📊 اطلاعات کانال -->
+    <section style="padding: 100px 0; background: rgba(0,0,0,0.4);">
+        <div class="container">
+            <h2 style="text-align: center; font-family: 'Orbitron'; font-size: 3rem; margin-bottom: 60px; color: var(--secondary);">
+                <i class="fas fa-satellite"></i> امپراتوری رسانه‌ای
+            </h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                <!-- آپارات -->
+                <div style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; border: 2px solid #ff2e63; text-align: center;">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #ff2e63, #ff6b9d); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; font-size: 3rem;">
                         <i class="fas fa-play-circle"></i>
                     </div>
-                    <h3 style="font-size: 2rem; margin-bottom: 20px;">آپارات</h3>
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 30px;">
-                        قلمرو اصلی ویدیوهای گیمینگ | هر ویدیو یک حماسه
-                    </p>
-                    <a href="https://www.aparat.com/Victoriousmahdi" target="_blank" class="channel-btn">
+                    <h3 style="font-family: 'Orbitron'; font-size: 1.8rem; margin-bottom: 15px;">آپارات</h3>
+                    <div style="margin: 25px 0;">
+                        <div style="font-size: 2.5rem; font-family: 'Orbitron'; color: var(--secondary);">۱۸۹</div>
+                        <div style="color: rgba(255,255,255,0.7);">دنبال‌کننده وفادار</div>
+                    </div>
+                    <a href="https://www.aparat.com/Victoriousmahdi" target="_blank" 
+                       style="display: inline-block; padding: 12px 30px; background: #ff2e63; color: white; text-decoration: none; border-radius: 50px; margin-top: 20px;">
                         <i class="fas fa-external-link-alt"></i> ورود به کانال
                     </a>
                 </div>
-                <div class="channel-card rubika">
-                    <div class="channel-icon">
+                
+                <!-- روبیکا -->
+                <div style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; border: 2px solid #8b5cf6; text-align: center;">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #8b5cf6, #c4b5fd); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; font-size: 3rem;">
                         <i class="fas fa-comments"></i>
                     </div>
-                    <h3 style="font-size: 2rem; margin-bottom: 20px;">روبیکا</h3>
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 30px;">
-                        ارتباط مستقیم و هماهنگی تیمی | گفتگوی زنده
-                    </p>
-                    <a href="https://web.rubika.ir/#c=c0CztlG03a997ee9f474089c7e1c352b" target="_blank" class="channel-btn">
+                    <h3 style="font-family: 'Orbitron'; font-size: 1.8rem; margin-bottom: 15px;">روبیکا</h3>
+                    <div style="margin: 25px 0;">
+                        <div style="font-size: 2.5rem; font-family: 'Orbitron'; color: var(--secondary);">۵۰+</div>
+                        <div style="color: rgba(255,255,255,0.7);">عضویت فعال</div>
+                    </div>
+                    <a href="https://web.rubika.ir/#c=c0CztlG03a997ee9f474089c7e1c352b" target="_blank" 
+                       style="display: inline-block; padding: 12px 30px; background: #8b5cf6; color: white; text-decoration: none; border-radius: 50px; margin-top: 20px;">
                         <i class="fas fa-external-link-alt"></i> عضویت در گروه
                     </a>
+                </div>
+                
+                <!-- اطلاعات شخصی -->
+                <div style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; border: 2px solid var(--secondary); text-align: center;">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; font-size: 3rem;">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3 style="font-family: 'Orbitron'; font-size: 1.8rem; margin-bottom: 15px;">اطلاعات امپراتور</h3>
+                    <div style="text-align: right; margin-top: 25px;">
+                        <div style="margin-bottom: 15px;">
+                            <i class="fas fa-gamepad" style="color: var(--accent); margin-left: 10px;"></i>
+                            <span>گیمینگ از سال ۲۰۱۸</span>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <i class="fas fa-trophy" style="color: var(--accent); margin-left: 10px;"></i>
+                            <span>۹۹۹+ پیروزی افسانه‌ای</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-video" style="color: var(--accent); margin-left: 10px;"></i>
+                            <span>۵۰+ محتوای حماسی</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- نظرات -->
-    <section class="comments-section">
-        <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
-            <h2 class="section-title">نظرات سلحشوران</h2>
-            <div id="comments-container">
-                <!-- نظرات از طریق JS اضافه می‌شوند -->
+    <!-- 💰 بخش دونیت -->
+    <section id="donation" class="donation-section">
+        <div class="container">
+            <h2 style="text-align: center; font-family: 'Orbitron'; font-size: 3rem; margin-bottom: 20px; color: var(--secondary);">
+                <i class="fas fa-gem"></i> حمایت از امپراتوری
+            </h2>
+            
+            <div class="donation-crystal">
+                <div style="position: relative; z-index: 2;">
+                    <p style="text-align: center; font-size: 1.3rem; color: rgba(255,255,255,0.9); margin-bottom: 40px; line-height: 1.8;">
+                        هر سکه حمایت شما، یک قدم به سوی تاج‌وتخت جهانی گیمینگ!<br>
+                        سوخت پیشرفت امپراتوری، ارتقای تجهیزات و خلق حماسه‌های بیشتر
+                    </p>
+                    
+                    <!-- مبالغ پیشفرض -->
+                    <div class="amount-buttons">
+                        <button class="amount-btn" onclick="selectAmount(10000)">۱۰,۰۰۰ تومان</button>
+                        <button class="amount-btn" onclick="selectAmount(50000)">۵۰,۰۰۰ تومان</button>
+                        <button class="amount-btn" onclick="selectAmount(100000)">۱۰۰,۰۰۰ تومان</button>
+                        <button class="amount-btn" onclick="selectAmount(200000)">۲۰۰,۰۰۰ تومان</button>
+                    </div>
+                    
+                    <!-- مبلغ دلخواه -->
+                    <div style="margin: 40px 0;">
+                        <div style="text-align: center; margin-bottom: 20px; color: var(--accent);">
+                            <i class="fas fa-edit"></i> یا مبلغ دلخواه:
+                        </div>
+                        <input type="number" id="customAmount" placeholder="مبلغ دلخواه (تومان)" 
+                               style="width: 100%; max-width: 400px; padding: 18px; background: rgba(255,255,255,0.1); border: 2px solid var(--secondary); border-radius: 15px; color: white; font-size: 1.2rem; text-align: center; display: block; margin: 0 auto;">
+                    </div>
+                    
+                    <!-- دکمه پرداخت -->
+                    <div style="text-align: center;">
+                        <a href="https://victoriousmahdi.ir.page" target="_blank" id="donateLink"
+                           style="display: inline-flex; align-items: center; gap: 15px; padding: 20px 60px; background: linear-gradient(45deg, var(--accent), var(--secondary)); color: var(--dark); text-decoration: none; border-radius: 50px; font-family: 'Orbitron'; font-size: 1.5rem; font-weight: bold;">
+                            <i class="fas fa-coins"></i>
+                            <span id="donateText">حمایت مالی</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 💬 بخش نظرات -->
+    <section style="padding: 100px 0;">
+        <div class="container">
+            <h2 style="text-align: center; font-family: 'Orbitron'; font-size: 3rem; margin-bottom: 20px; color: var(--secondary);">
+                <i class="fas fa-comments"></i> نظرات سلحشوران
+            </h2>
+            
+            <div id="commentsContainer" style="max-width: 800px; margin: 50px auto; max-height: 500px; overflow-y: auto; padding: 20px;">
+                <!-- نظرات اینجا نمایش داده می‌شوند -->
             </div>
             
-            <div class="comment-form">
-                <h3 style="color: var(--neon-cyan); margin-bottom: 25px; text-align: center;">
+            <div style="max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 20px;">
+                <h3 style="color: var(--accent); margin-bottom: 25px; text-align: center;">
                     <i class="fas fa-edit"></i> ثبت نظر جدید
                 </h3>
-                <input type="text" id="commentName" class="form-input" placeholder="نام شما">
-                <textarea id="commentText" class="form-input" placeholder="نظر شما درباره امپراتوری گیمینگ..." rows="4"></textarea>
-                <button onclick="addComment()" style="width: 100%; padding: 15px; background: var(--neon-pink); color: white; border: none; border-radius: 10px; cursor: pointer; font-size: 1.1rem;">
+                <input type="text" id="commentName" placeholder="نام شما" 
+                       style="width: 100%; padding: 15px; margin-bottom: 20px; background: rgba(255,255,255,0.1); border: 1px solid var(--secondary); border-radius: 10px; color: white;">
+                <textarea id="commentText" placeholder="نظر شما..." rows="4"
+                          style="width: 100%; padding: 15px; margin-bottom: 20px; background: rgba(255,255,255,0.1); border: 1px solid var(--secondary); border-radius: 10px; color: white;"></textarea>
+                <button onclick="addComment()" 
+                        style="width: 100%; padding: 15px; background: var(--primary); color: white; border: none; border-radius: 10px; cursor: pointer; font-size: 1.1rem;">
                     <i class="fas fa-paper-plane"></i> ارسال نظر
                 </button>
             </div>
         </div>
     </section>
     
-    <!-- دونیت با مبالغ پیشفرض -->
-    <section class="donation-section">
-        <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
-            <h2 class="section-title">حمایت از امپراتوری</h2>
-            <div class="donation-crystal">
-                <div style="position: relative; z-index: 2;">
-                    <p style="text-align: center; color: rgba(255,255,255,0.9); font-size: 1.2rem; margin-bottom: 40px;">
-                        هر سکه حمایت شما، یک قدم به سوی تاج‌وتخت جهانی گیمینگ!
-                    </p>
-                    
-                    <!-- مبالغ پیشفرض -->
-                    <div class="donate-amounts">
-                        <button class="amount-btn" onclick="selectAmount(10000)">
-                            <div style="font-size: 1.5rem; font-weight: bold;">۱۰,۰۰۰</div>
-                            <div style="font-size: 0.9rem; opacity: 0.8;">تومان</div>
-                        </button>
-                        
-                        <button class="amount-btn" onclick="selectAmount(50000)">
-                            <div style="font-size: 1.5rem; font-weight: bold;">۵۰,۰۰۰</div>
-                            <div style="font-size: 0.9rem; opacity: 0.8;">تومان</div>
-                        </button>
-                        
-                        <button class="amount-btn" onclick="selectAmount(100000)">
-                            <div style="font-size: 1.5rem; font-weight: bold;">۱۰۰,۰۰۰</div>
-                            <div style="font-size: 0.9rem; opacity: 0.8;">تومان</div>
-                        </button>
-                        
-                        <button class="amount-btn" onclick="selectAmount(200000)">
-                            <div style="font-size: 1.5rem; font-weight: bold;">۲۰۰,۰۰۰</div>
-                            <div style="font-size: 0.9rem; opacity: 0.8;">تومان</div>
-                        </button>
-                    </div>
-                    
-                    <!-- مبلغ دلخواه -->
-                    <div style="margin: 30px 0;">
-                        <div style="text-align: center; margin-bottom: 15px; color: rgba(255,255,255,0.8);">
-                            <i class="fas fa-edit"></i> یا مبلغ دلخواه:
-                        </div>
-                        <input type="number" id="customAmount" placeholder="مبلغ دلخواه (تومان)" 
-                               class="form-input" style="max-width: 300px; margin: 0 auto; display: block; text-align: center;">
-                    </div>
-                    
-                    <!-- دکمه پرداخت -->
-                    <div style="text-align: center; margin-top: 40px;">
-                        <a href="https://victoriousmahdi.ir.page" target="_blank" id="donateButton" class="donate-btn">
-                            <i class="fas fa-gem"></i> 
-                            <span id="donateText">حمایت مالی از طریق درگاه پرداخت</span>
-                        </a>
-                    </div>
-                    
-                    <p style="text-align: center; color: rgba(255,255,255,0.7); margin-top: 40px; font-size: 0.9rem;">
-                        پس از کلیک به درگاه پرداخت امن منتقل می‌شوید
-                    </p>
-                </div>
+    <!-- 🛡️ اتاق فرماندهی پنل -->
+    <div class="command-panel" id="commandPanel">
+        <h2 style="color: var(--primary); text-align: center; margin-bottom: 40px; font-family: 'Orbitron';">
+            <i class="fas fa-crown"></i> اتاق فرماندهی
+        </h2>
+        
+        <!-- تغییر تم -->
+        <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; margin-bottom: 25px;">
+            <h3 style="color: var(--secondary); margin-bottom: 20px;">
+                <i class="fas fa-palette"></i> تغییر تم سایت
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                <button onclick="changeTheme('cyberpunk')" 
+                        style="padding: 15px; background: linear-gradient(45deg, #ff2a6d, #00ffea); color: white; border: none; border-radius: 10px; cursor: pointer;">
+                    سایبرپانک
+                </button>
+                <button onclick="changeTheme('matrix')" 
+                        style="padding: 15px; background: linear-gradient(45deg, #00ff41, #008f11); color: white; border: none; border-radius: 10px; cursor: pointer;">
+                    ماتریکس
+                </button>
+                <button onclick="changeTheme('neon')" 
+                        style="padding: 15px; background: linear-gradient(45deg, #ff0080, #00ffcc); color: white; border: none; border-radius: 10px; cursor: pointer;">
+                    نئون
+                </button>
+                <button onclick="changeTheme('fire')" 
+                        style="padding: 15px; background: linear-gradient(45deg, #ff4400, #ff9500); color: white; border: none; border-radius: 10px; cursor: pointer;">
+                    آتشین
+                </button>
             </div>
         </div>
-    </section>
-    
-    <!-- فوتر -->
-    <footer>
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <h3 style="color: var(--neon-cyan); margin-bottom: 20px; font-family: 'Orbitron'; font-size: 1.8rem;">
-                VICTORIOUSMAHDI
+        
+        <!-- مدیریت متن داینامیک -->
+        <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; margin-bottom: 25px;">
+            <h3 style="color: var(--secondary); margin-bottom: 20px;">
+                <i class="fas fa-edit"></i> متن داینامیک
             </h3>
-            <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 30px;">
-                امپراتوری گیمینگ فارسی | هر بازی یک افسانه، هر بازیکن یک قهرمان
-            </p>
-            <div style="display: flex; justify-content: center; gap: 30px; margin: 40px 0; flex-wrap: wrap;">
-                <a href="https://www.aparat.com/Victoriousmahdi" target="_blank" 
-                   style="color: rgba(255,255,255,0.8); text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                    <i class="fas fa-play-circle"></i> آپارات
-                </a>
-                <a href="https://web.rubika.ir/#c=c0CztlG03a997ee9f474089c7e1c352b" target="_blank" 
-                   style="color: rgba(255,255,255,0.8); text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                    <i class="fas fa-comments"></i> روبیکا
-                </a>
-                <a href="https://victoriousmahdi.ir.page" target="_blank" 
-                   style="color: rgba(255,255,255,0.8); text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                    <i class="fas fa-heart"></i> حمایت مالی
-                </a>
+            <textarea id="dynamicTextInput" rows="4" placeholder="متن جدید را وارد کنید..."
+                      style="width: 100%; padding: 15px; background: rgba(255,255,255,0.1); border: 1px solid var(--secondary); border-radius: 10px; color: white; margin-bottom: 15px;"></textarea>
+            <button onclick="updateDynamicText()" 
+                    style="width: 100%; padding: 12px; background: var(--secondary); color: var(--dark); border: none; border-radius: 10px; cursor: pointer;">
+                بروزرسانی متن
+            </button>
+        </div>
+        
+        <!-- مدیریت وضعیت -->
+        <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; margin-bottom: 25px;">
+            <h3 style="color: var(--secondary); margin-bottom: 20px;">
+                <i class="fas fa-signal"></i> وضعیت آنلاین
+            </h3>
+            <select id="statusSelect" style="width: 100%; padding: 12px; background: rgba(255,255,255,0.1); border: 1px solid var(--secondary); border-radius: 10px; color: white; margin-bottom: 15px;">
+                <option value="online">آنلاین</option>
+                <option value="streaming">در حال استریم</option>
+                <option value="offline">آفلاین</option>
+            </select>
+            <button onclick="updateStatus()" 
+                    style="width: 100%; padding: 12px; background: var(--accent); color: var(--dark); border: none; border-radius: 10px; cursor: pointer;">
+                بروزرسانی وضعیت
+            </button>
+        </div>
+        
+        <!-- مدیریت نظرات -->
+        <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px;">
+            <h3 style="color: var(--secondary); margin-bottom: 20px;">
+                <i class="fas fa-comments"></i> مدیریت نظرات
+            </h3>
+            <button onclick="clearComments()" 
+                    style="width: 100%; padding: 12px; background: #ff4757; color: white; border: none; border-radius: 10px; cursor: pointer; margin-bottom: 10px;">
+                پاک کردن همه نظرات
+            </button>
+            <button onclick="saveAll()" 
+                    style="width: 100%; padding: 12px; background: var(--primary); color: white; border: none; border-radius: 10px; cursor: pointer;">
+                ذخیره همه تنظیمات
+            </button>
+        </div>
+        
+        <p style="text-align: center; color: rgba(255,255,255,0.5); margin-top: 40px; font-size: 0.9rem;">
+            تغییرات به صورت خودکار ذخیره می‌شوند
+        </p>
+    </div>
+    
+    <!-- 🏁 فوتر -->
+    <footer style="background: rgba(0,0,0,0.5); padding: 60px 0 30px; border-top: 2px solid var(--secondary);">
+        <div class="container">
+            <div style="text-align: center;">
+                <h3 style="color: var(--secondary); font-family: 'Orbitron'; font-size: 2.5rem; margin-bottom: 20px;">
+                    VICTORIOUSMAHDI
+                </h3>
+                <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 40px;">
+                    امپراتوری گیمینگ فارسی | طراحی انحصاری با تکنولوژی مدرن
+                </p>
+                
+                <div style="display: flex; justify-content: center; gap: 30px; margin: 40px 0; flex-wrap: wrap;">
+                    <a href="https://www.aparat.com/Victoriousmahdi" target="_blank" 
+                       style="color: rgba(255,255,255,0.8); text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-play-circle"></i> آپارات
+                    </a>
+                    <a href="https://web.rubika.ir/#c=c0CztlG03a997ee9f474089c7e1c352b" target="_blank" 
+                       style="color: rgba(255,255,255,0.8); text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-comments"></i> روبیکا
+                    </a>
+                    <a href="https://victoriousmahdi.ir.page" target="_blank" 
+                       style="color: rgba(255,255,255,0.8); text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-heart"></i> حمایت مالی
+                    </a>
+                </div>
+                
+                <p style="color: rgba(255,255,255,0.5); margin-top: 50px; font-size: 0.9rem;">
+                    © ۲۰۲۴ امپراتوری VICTORIOUSMAHDI | طراحی اختصاصی
+                </p>
             </div>
-            <p style="color: rgba(255,255,255,0.5); margin-top: 50px; font-size: 0.9rem;">
-                © 2024 امپراتوری VICTORIOUSMAHDI | تمامی حقوق محفوظ است
-            </p>
         </div>
     </footer>
     
     <script>
-        // ==================== اتاق فرماندهی ====================
-        let isAuthenticated = false;
-        const ADMIN_PASSWORD = "mahdi123"; // رمز مخفی - فقط تو می‌دونی
+        // ==================== ذخیره‌سازی ====================
+        function saveToStorage(key, value) {
+            localStorage.setItem(`victorious_${key}`, JSON.stringify(value));
+        }
         
-        document.getElementById('commandToggle').addEventListener('click', function() {
-            if (!isAuthenticated) {
-                document.getElementById('loginOverlay').style.display = 'flex';
-            } else {
-                document.getElementById('commandPanel').classList.toggle('active');
+        function loadFromStorage(key) {
+            const data = localStorage.getItem(`victorious_${key}`);
+            return data ? JSON.parse(data) : null;
+        }
+        
+        // ==================== اتاق فرماندهی ====================
+        let commandPanelOpen = false;
+        
+        function toggleCommandPanel() {
+            const panel = document.getElementById('commandPanel');
+            commandPanelOpen = !commandPanelOpen;
+            panel.classList.toggle('active', commandPanelOpen);
+        }
+        
+        // بستن پنل با کلیک خارج
+        document.addEventListener('click', function(event) {
+            const panel = document.getElementById('commandPanel');
+            const btn = document.querySelector('.command-btn');
+            
+            if (!panel.contains(event.target) && !btn.contains(event.target) && commandPanelOpen) {
+                panel.classList.remove('active');
+                commandPanelOpen = false;
             }
         });
         
-        function checkPassword() {
-            const password = document.getElementById('adminPassword').value;
-            
-            if (password === ADMIN_PASSWORD) {
-                isAuthenticated = true;
-                document.getElementById('loginOverlay').style.display = 'none';
-                document.getElementById('commandPanel').classList.add('active');
-                showNotification('✅ ورود موفق! به اتاق فرماندهی خوش آمدید.', 'success');
-            } else {
-                showNotification('❌ رمز عبور اشتباه است!', 'error');
+        // ==================== تغییر تم ====================
+        function changeTheme(themeName) {
+            document.body.className = themeName + '-theme';
+            saveToStorage('theme', themeName);
+            showNotification(`✅ تم ${themeName} فعال شد!`, 'success');
+        }
+        
+        // ==================== متن داینامیک ====================
+        function updateDynamicText() {
+            const text = document.getElementById('dynamicTextInput').value;
+            if (text.trim()) {
+                const display = document.getElementById('dynamicText');
+                display.innerHTML = `<p style="text-align: center; font-size: 1.4rem; line-height: 1.8; animation: hologram 4s infinite alternate;">${text}</p>`;
+                saveToStorage('dynamicText', text);
+                showNotification('✅ متن داینامیک بروزرسانی شد!', 'success');
             }
-            
-            document.getElementById('adminPassword').value = '';
         }
         
-        // ==================== مدیریت آمار ====================
-        function updateStats() {
-            const followers = document.getElementById('followersInput').value;
-            const views = document.getElementById('viewsInput').value;
+        // ==================== وضعیت آنلاین ====================
+        function updateStatus() {
+            const status = document.getElementById('statusSelect').value;
+            const indicator = document.getElementById('statusIndicator');
+            const statusText = document.getElementById('statusText');
             
-            document.getElementById('followersDisplay').textContent = followers;
-            document.getElementById('viewsDisplay').textContent = formatViews(views);
+            indicator.className = `status-indicator status-${status}`;
             
-            saveToLocalStorage('stats', { followers, views });
-            showNotification('✅ آمار با موفقیت بروزرسانی شد.', 'success');
+            const statusMessages = {
+                'online': 'آنلاین',
+                'streaming': 'در حال استریم',
+                'offline': 'آفلاین'
+            };
+            
+            statusText.textContent = statusMessages[status];
+            saveToStorage('status', status);
+            showNotification(`✅ وضعیت به "${statusMessages[status]}" تغییر کرد!`, 'success');
         }
         
-        function formatViews(views) {
-            const num = parseInt(views);
-            if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
-            if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
-            return num.toString();
+        // ==================== سیستم دونیت ====================
+        let selectedAmount = 0;
+        
+        function selectAmount(amount) {
+            selectedAmount = amount;
+            document.getElementById('customAmount').value = '';
+            updateDonateButton();
+        }
+        
+        document.getElementById('customAmount').addEventListener('input', function() {
+            if (this.value) {
+                selectedAmount = parseInt(this.value);
+                updateDonateButton();
+            }
+        });
+        
+        function updateDonateButton() {
+            const link = document.getElementById('donateLink');
+            const text = document.getElementById('donateText');
+            
+            if (selectedAmount > 0) {
+                link.href = `https://victoriousmahdi.ir.page/?amount=${selectedAmount}`;
+                text.textContent = `پرداخت ${selectedAmount.toLocaleString()} تومان`;
+            } else {
+                link.href = 'https://victoriousmahdi.ir.page';
+                text.textContent = 'حمایت مالی';
+            }
         }
         
         // ==================== سیستم نظرات ====================
@@ -962,7 +934,7 @@
             const text = document.getElementById('commentText').value.trim();
             
             if (!name || !text) {
-                showNotification('❌ لطفا نام و متن نظر را وارد کنید.', 'error');
+                showNotification('❌ لطفا نام و متن نظر را وارد کنید!', 'error');
                 return;
             }
             
@@ -979,11 +951,11 @@
             document.getElementById('commentName').value = '';
             document.getElementById('commentText').value = '';
             
-            showNotification('✅ نظر شما با موفقیت ثبت شد.', 'success');
+            showNotification('✅ نظر شما ثبت شد!', 'success');
         }
         
         function renderComments() {
-            const container = document.getElementById('comments-container');
+            const container = document.getElementById('commentsContainer');
             
             if (comments.length === 0) {
                 container.innerHTML = '<p style="text-align: center; color: rgba(255,255,255,0.5); padding: 40px;">هنوز نظری ثبت نشده است!</p>';
@@ -991,140 +963,39 @@
             }
             
             container.innerHTML = comments.map(comment => `
-                <div class="comment">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; color: var(--neon-cyan);">
+                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-bottom: 15px; border-right: 4px solid var(--accent);">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; color: var(--secondary);">
                         <strong>${comment.name}</strong>
                         <span style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">${comment.date}</span>
                     </div>
-                    <div>${comment.text}</div>
+                    <div style="color: rgba(255,255,255,0.9); line-height: 1.6;">${comment.text}</div>
                 </div>
             `).join('');
             
-            saveToLocalStorage('comments', comments);
+            saveToStorage('comments', comments);
         }
         
         function clearComments() {
             if (confirm('آیا از پاک کردن همه نظرات مطمئنید؟')) {
                 comments = [];
                 renderComments();
-                showNotification('✅ همه نظرات پاک شدند.', 'success');
+                showNotification('✅ همه نظرات پاک شدند!', 'success');
             }
         }
         
-        // ==================== سیستم دونیت ====================
-        let selectedAmount = 0;
-        
-        function selectAmount(amount) {
-            selectedAmount = amount;
-            
-            // حذف انتخاب قبلی
-            document.querySelectorAll('.amount-btn').forEach(btn => {
-                btn.classList.remove('active');
+        // ==================== ذخیره همه تنظیمات ====================
+        function saveAll() {
+            saveToStorage('allSettings', {
+                theme: document.body.className.replace('-theme', ''),
+                status: document.getElementById('statusSelect').value,
+                dynamicText: document.getElementById('dynamicTextInput').value,
+                comments: comments
             });
             
-            // هایلایت دکمه انتخاب شده
-            event.currentTarget.classList.add('active');
-            
-            // پاک کردن مبلغ دلخواه
-            document.getElementById('customAmount').value = '';
-            
-            // آپدیت لینک پرداخت
-            updateDonateLink();
+            showNotification('✅ همه تنظیمات ذخیره شدند!', 'success');
         }
         
-        // وقتی مبلغ دلخواه وارد شد
-        document.getElementById('customAmount').addEventListener('input', function() {
-            if (this.value) {
-                selectedAmount = parseInt(this.value);
-                
-                // حذف انتخاب از دکمه‌ها
-                document.querySelectorAll('.amount-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                
-                updateDonateLink();
-            }
-        });
-        
-        function updateDonateLink() {
-            const donateBtn = document.getElementById('donateButton');
-            const donateText = document.getElementById('donateText');
-            
-            if (selectedAmount > 0) {
-                // اضافه کردن مبلغ به لینک درگاه پرداخت
-                donateBtn.href = `https://victoriousmahdi.ir.page/?amount=${selectedAmount}`;
-                donateText.textContent = `پرداخت ${selectedAmount.toLocaleString()} تومان`;
-            } else {
-                donateBtn.href = 'https://victoriousmahdi.ir.page';
-                donateText.textContent = 'حمایت مالی از طریق درگاه پرداخت';
-            }
-        }
-        
-        // ==================== ذخیره‌سازی ====================
-        function saveToLocalStorage(key, data) {
-            localStorage.setItem(`victoriousmahdi_${key}`, JSON.stringify(data));
-        }
-        
-        function loadFromLocalStorage(key) {
-            const data = localStorage.getItem(`victoriousmahdi_${key}`);
-            return data ? JSON.parse(data) : null;
-        }
-        
-        function saveSettings() {
-            const stats = {
-                followers: document.getElementById('followersInput').value,
-                views: document.getElementById('viewsInput').value
-            };
-            
-            saveToLocalStorage('all_settings', {
-                stats,
-                comments
-            });
-            
-            showNotification('✅ همه تنظیمات با موفقیت ذخیره شدند.', 'success');
-        }
-        
-        function loadSettings() {
-            const allData = loadFromLocalStorage('all_settings');
-            
-            if (!allData) {
-                showNotification('❌ تنظیمات ذخیره‌شده‌ای یافت نشد.', 'error');
-                return;
-            }
-            
-            if (allData.stats) {
-                document.getElementById('followersInput').value = allData.stats.followers;
-                document.getElementById('viewsInput').value = allData.stats.views;
-                document.getElementById('followersDisplay').textContent = allData.stats.followers;
-                document.getElementById('viewsDisplay').textContent = formatViews(allData.stats.views);
-            }
-            
-            if (allData.comments) {
-                comments = allData.comments;
-                renderComments();
-            }
-            
-            showNotification('✅ همه تنظیمات با موفقیت بارگذاری شدند.', 'success');
-        }
-        
-        function resetAll() {
-            if (confirm('آیا از بازنشانی همه چیز مطمئنید؟')) {
-                localStorage.clear();
-                
-                comments = [];
-                
-                document.getElementById('followersInput').value = '189';
-                document.getElementById('viewsInput').value = '283000';
-                document.getElementById('followersDisplay').textContent = '189';
-                document.getElementById('viewsDisplay').textContent = '283K';
-                
-                renderComments();
-                
-                showNotification('✅ همه چیز به حالت اولیه بازگشت.', 'success');
-            }
-        }
-        
-        // ==================== سیستم نوتیفیکیشن ====================
+        // ==================== نوتیفیکیشن ====================
         function showNotification(message, type = 'info') {
             const colors = {
                 'success': '#05ffa1',
@@ -1135,52 +1006,138 @@
             const notification = document.createElement('div');
             notification.style.cssText = `
                 position: fixed;
-                top: 20px;
+                top: 80px;
                 right: 20px;
                 padding: 15px 25px;
                 background: rgba(0, 0, 0, 0.9);
                 border-left: 4px solid ${colors[type]};
                 color: white;
-                border-radius: 8px;
+                border-radius: 10px;
                 z-index: 10000;
-                animation: slideIn 0.3s;
                 display: flex;
                 align-items: center;
                 gap: 15px;
+                animation: slideIn 0.3s;
             `;
             
             notification.innerHTML = `
                 <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" 
-                   style="color: ${colors[type]}; font-size: 1.2rem;"></i>
+                   style="color: ${colors[type]};"></i>
                 <span>${message}</span>
             `;
             
             document.body.appendChild(notification);
             
             setTimeout(() => {
-                notification.style.opacity = '0';
+                notification.style.animation = 'slideOut 0.3s';
                 setTimeout(() => notification.remove(), 300);
             }, 3000);
         }
         
-        // ==================== ذرات شناور ====================
-        function createParticles() {
-            const colors = ['#ff2a6d', '#00ffea', '#05ffa1', '#8b5cf6'];
-            const container = document.createElement('div');
-            container.className = 'particles';
+        // ==================== بارگذاری اولیه ====================
+        window.addEventListener('load', function() {
+            // بارگذاری تم
+            const savedTheme = loadFromStorage('theme') || 'cyberpunk';
+            changeTheme(savedTheme);
             
-            for (let i = 0; i < 30; i++) {
+            // بارگذاری وضعیت
+            const savedStatus = loadFromStorage('status') || 'online';
+            document.getElementById('statusSelect').value = savedStatus;
+            updateStatus();
+            
+            // بارگذاری متن داینامیک
+            const savedText = loadFromStorage('dynamicText');
+            if (savedText) {
+                document.getElementById('dynamicText').innerHTML = 
+                    `<p style="text-align: center; font-size: 1.4rem; line-height: 1.8; animation: hologram 4s infinite alternate;">${savedText}</p>`;
+                document.getElementById('dynamicTextInput').value = savedText;
+            }
+            
+            // بارگذاری نظرات
+            const savedComments = loadFromStorage('comments');
+            if (savedComments) {
+                comments = savedComments;
+                renderComments();
+            }
+            
+            // اضافه کردن CSS انیمیشن‌ها
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                
+                @keyframes slideOut {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+                
+                @keyframes crystalRotate {
+                    100% { transform: rotate(360deg); }
+                }
+                
+                .glow-btn {
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .glow-btn::before {
+                    content: '';
+                    position: absolute;
+                    top: -2px;
+                    left: -2px;
+                    right: -2px;
+                    bottom: -2px;
+                    background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
+                    z-index: -1;
+                    filter: blur(10px);
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                }
+                
+                .glow-btn:hover::before {
+                    opacity: 1;
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // ایجاد ذرات شناور
+            createFloatingParticles();
+            
+            console.log('🎮 امپراتوری گیمینگ با طراحی انحصاری بارگذاری شد!');
+        });
+        
+        // ایجاد ذرات شناور
+        function createFloatingParticles() {
+            const colors = ['#ff2a6d', '#00ffea', '#05ffa1', '#8b5cf6', '#ffd166'];
+            const container = document.createElement('div');
+            container.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -2;
+                pointer-events: none;
+            `;
+            
+            for (let i = 0; i < 50; i++) {
                 const particle = document.createElement('div');
+                const size = Math.random() * 5 + 2;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
                 particle.style.cssText = `
                     position: absolute;
-                    width: ${Math.random() * 4 + 2}px;
-                    height: ${Math.random() * 4 + 2}px;
-                    background: ${colors[Math.floor(Math.random() * colors.length)]};
+                    width: ${size}px;
+                    height: ${size}px;
+                    background: ${color};
                     border-radius: 50%;
-                    opacity: ${Math.random() * 0.5 + 0.3};
+                    opacity: ${Math.random() * 0.5 + 0.2};
                     left: ${Math.random() * 100}%;
                     top: ${Math.random() * 100}%;
-                    animation: floatParticle ${Math.random() * 20 + 10}s linear infinite;
+                    animation: particleFloat ${Math.random() * 20 + 10}s linear infinite;
+                    animation-delay: ${Math.random() * 5}s;
                 `;
                 
                 container.appendChild(particle);
@@ -1188,67 +1145,6 @@
             
             document.body.appendChild(container);
         }
-        
-        // ==================== بارگذاری اولیه ====================
-        window.addEventListener('load', function() {
-            // ایجاد ذرات
-            createParticles();
-            
-            // بارگذاری آمار
-            const savedStats = loadFromLocalStorage('stats');
-            if (savedStats) {
-                document.getElementById('followersInput').value = savedStats.followers;
-                document.getElementById('viewsInput').value = savedStats.views;
-                document.getElementById('followersDisplay').textContent = savedStats.followers;
-                document.getElementById('viewsDisplay').textContent = formatViews(savedStats.views);
-            }
-            
-            // بارگذاری نظرات
-            const savedComments = loadFromLocalStorage('comments');
-            if (savedComments) {
-                comments = savedComments;
-                renderComments();
-            }
-            
-            // اسکرول نرم
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
-            
-            // اضافه کردن CSS برای انیمیشن‌ها
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes floatParticle {
-                    0% { transform: translateY(100vh) rotate(0deg); }
-                    100% { transform: translateY(-100px) rotate(360deg); }
-                }
-                
-                @keyframes slideIn {
-                    from { transform: translateX(100%); opacity: 0; }
-                    to { transform: translateX(0); opacity: 1; }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            console.log('🎮 امپراتوری گیمینگ بارگذاری شد!');
-        });
-        
-        // بستن پنل فرماندهی با کلیک خارج
-        document.addEventListener('click', function(event) {
-            const panel = document.getElementById('commandPanel');
-            const toggle = document.getElementById('commandToggle');
-            
-            if (!panel.contains(event.target) && !toggle.contains(event.target) && 
-                panel.classList.contains('active')) {
-                panel.classList.remove('active');
-            }
-        });
     </script>
 </body>
 </html>
